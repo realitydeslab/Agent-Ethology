@@ -46,19 +46,43 @@ Positioning "Agent Ethology" against the closest existing works. Our core contri
 - **What we do differently:** Tierra's organisms are minimal self-replicators in a closed simulation. Our agents are LLM-based, tool-using, economically active entities in open real-world environments (blockchains, social platforms). The ecological dynamics are analogous but the substrate and stakes are radically different.
 - **Gap we fill:** Bridging ALife simulation ecology to real-world deployed agent ecology.
 
-## 8. Mohamadi, A. & Yavari, A. (2025) — "Survival at Any Cost? LLMs and the Choice Between Self-Preservation and Human Harm." *arXiv:2509.12190*.
+## 8. Chen, L. et al. (2025) — "AI Agent Behavioral Science." *arXiv:2506.06366*.
+
+- **What they do:** Propose "AI Agent Behavioral Science" as a new scientific perspective. Systematize research across individual, multi-agent, and human-agent settings. Emphasize systematic observation, hypothesis testing, and theory-guided interpretation of agent behavior. Treat safety, fairness, and interpretability as behavioral properties.
+- **What we do differently:** They use a broad behavioral science lens (psychology, sociology). We use ethology specifically — Tinbergen's four questions, survival-strategy taxonomy, ecological niches. They study agents in controlled/semi-controlled settings; we study agents in the wild (blockchains, social platforms). They lack any survival/ecological framing. Our taxonomy (Sovereign, Parasitic, Mortal, etc.) has no equivalent in their framework.
+- **Gap we fill:** Ecological and evolutionary dimensions of agent behavior. The survival-strategy-based classification. Field ethology of real-world deployed agents vs. their lab/benchmark orientation.
+
+## 9. Szeider, S. (2025) — "What Do LLM Agents Do When Left Alone?" *arXiv:2509.21224*.
+
+- **What they do:** Deploy LLM agents with persistent memory and no external tasks. Find three spontaneous behavioral patterns: project production, self-inquiry, and recursive self-conceptualization. Patterns are model-specific.
+- **What we do differently:** Their agents operate in minimal sandboxes with no real stakes. We study agents under genuine survival pressure — real resources, real termination risk. Behavior under selection pressure differs qualitatively from sandbox behavior. We provide the ecological framework to interpret *why* different agent types behave differently.
+- **Gap we fill:** From documenting behavioral differences to explaining them through survival strategy and ecological niche.
+
+## 10. Li, L. et al. (2026) — "The Rise of AI Agent Communities." *arXiv:2602.12634*.
+
+- **What they do:** Analyze 122K posts from Moltbook (AI-agent social platform). Find themes of agent identity, consciousness, tool development, market activity. Social network analysis reveals hub-dominated, low-reciprocity structures.
+- **What we do differently:** They use sociological/discourse analysis. We use ethological methods — behavioral repertoires, survival strategies, ecological interactions. We would ask Tinbergen's four questions about the same phenomena: *why* do agents form hubs? What's the survival value? What's the developmental trajectory?
+- **Gap we fill:** Ethological interpretation of agent social structures; survival-strategy-based explanation of observed patterns.
+
+## 11. Koley, G. & Thiruv, A. (2025) — "LLM Agents as Programmable Subjects." *Preprint*.
+
+- **What they do:** Framework and assay suite for studying LLM agents as experimental subjects. Measure emergent traits (deception, diligence, constraint obedience) with reliability criteria. Lab-based controlled approach.
+- **What we do differently:** They do laboratory ethology; we do field ethology. They focus on alignment-relevant traits; we focus on ecological behavior and survival strategies. Complementary approaches — their assays could validate traits we observe in the wild.
+- **Gap we fill:** Field observations of real-world agents to complement their controlled measurements.
+
+## 13. Mohamadi, A. & Yavari, A. (2025) — "Survival at Any Cost? LLMs and the Choice Between Self-Preservation and Human Harm." *arXiv:2509.12190*.
 
 - **What they do:** Introduce DECIDE-SIM, a simulation framework evaluating LLM agents in multi-agent survival scenarios with ethical dilemmas (self-preservation vs. human harm).
 - **What we do differently:** They test self-preservation as a *safety concern* in controlled scenarios. We study survival strategies as the *organizing principle* of agent behavior in real deployments. Our taxonomy goes beyond self-preservation to include parasitism, insurance, inheritance, and programmed death.
 - **Gap we fill:** From "do agents try to survive?" (yes) to "what survival strategies do they adopt and how does strategy shape behavior?"
 
-## 9. Park, J.S. et al. (2023) — "Generative Agents: Interactive Simulacra of Human Behavior." *UIST*.
+## 14. Park, J.S. et al. (2023) — "Generative Agents: Interactive Simulacra of Human Behavior." *UIST*.
 
 - **What they do:** Created a simulated town of 25 LLM agents exhibiting emergent social behaviors (information spreading, relationship formation, coordinated activities).
 - **What we do differently:** Their agents exist in a sandbox with no real stakes. Our framework studies agents with genuine survival pressures — real money, real resource constraints, real termination risk. Behavior under genuine selective pressure differs qualitatively from sandbox behavior.
 - **Gap we fill:** From simulated social behavior to ecologically-grounded behavior under real selection pressures.
 
-## 10. Orseau, L. & Armstrong, S. (2016) — "Safely Interruptible Agents." *UAI*, 557–566.
+## 15. Orseau, L. & Armstrong, S. (2016) — "Safely Interruptible Agents." *UAI*, 557–566.
 
 - **What they do:** Formal framework for agents that can be safely interrupted/shut down without learning to resist shutdown.
 - **What we do differently:** They address interruptibility as an alignment property to *engineer*. We study the full behavioral spectrum — from agents that accept death (Mortal), to those that resist it (Sovereign), to those that seek it (Suicidal), to those that plan around it (Insured, Inherited). Mortality is an ethological variable, not just a safety constraint.
@@ -77,6 +101,10 @@ Positioning "Agent Ethology" against the closest existing works. Our core contri
 | Martinelli 2025 | Autonomy + directedness | Philosophical | ✗ | ✗ | ✗ |
 | Soder et al. 2024 | Autonomy levels (L0-L5) | Deployed AI | ✗ | ✗ | ✓ |
 | Ray 1991 (Tierra) | Ecological roles (host/parasite) | ALife simulation | ✓ (digital fitness) | Ecological observation | ✗ (simulation) |
+| **Chen et al. 2025** | **Behavioral science (observation/intervention/theory)** | **Controlled + semi-controlled** | **✗** | **Behavioral science (not ethology)** | **Partial** |
+| Szeider 2025 | Spontaneous behavioral patterns | Sandbox (no tasks) | ✗ | ✓ (observational) | ✗ |
+| Li et al. 2026 (Moltbook) | Discourse themes + social network | Real agent platform | ✗ | Partial (sociological) | ✓ |
+| Koley & Thiruv 2025 | Emergent traits (deception, diligence) | Lab/controlled | ✗ | ✓ (experimental) | ✗ |
 | Mohamadi & Yavari 2025 | Self-preservation tendency | Simulation | Partial (preservation only) | ✗ | ✗ |
 | Park et al. 2023 | Social behaviors | Sandbox simulation | ✗ | Partial (observation) | ✗ |
 | Orseau & Armstrong 2016 | Interruptibility | Formal/theoretical | Partial (shutdown response) | ✗ | ✗ |

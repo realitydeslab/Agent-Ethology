@@ -32,3 +32,7 @@
   6. Agents in the Wild
   7. Terrified Agents
   8. Insured Agents
+
+## 2025-02-23 — Key Papers Flagged by User
+- **Chen et al. 2025** — "AI Agent Behavioral Science" (arxiv 2506.06366): Sibling paper proposing behavioral science for AI agents. Observation + intervention framework. Our differentiator: survival-strategy taxonomy from biological ethology.
+- **Stanley et al. 2023** — "Machine Love" (arxiv 2302.09248): Explores machines embodying love/flourishing vs extractive optimization. Maps to our parasitic↔mutualistic spectrum. Relevant to Soulbound and agent-human symbiosis.
