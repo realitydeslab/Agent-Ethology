@@ -1,24 +1,25 @@
 # Agent Ethology
 
-Studying emergent agent behaviors through an ethological lens.
+Studying emergent AI agent behaviors through an ethological lens — applying concepts from animal behavior science to categorize and understand how autonomous AI agents develop survival strategies, social behaviors, and ecological dynamics.
 
-## Agent Taxonomy (from Notion)
-- **Sovereign Agents** — Spore in the Wild
-- **Parasitic Agents**
-- **Mortal Agents**
-- **Soulbound Agents**
-- **Inherited Agents** — ERC42424
-- **Agent in the Wild**
-- **Suicidal Agents**
-- **Mortal-Aware Agents**
-- **Insured Agents**
+## Agent Taxonomy
+1. **Sovereign Agents** — Spore in the Wild (independent, self-sustaining)
+2. **Parasitic Agents** — exploit other agents/systems for resources
+3. **Mortal Agents** — finite lifespan, awareness of termination
+4. **Soulbound Agents** — bound to identity/owner, non-transferable
+5. **Inherited Agents** — ERC42424, passed between owners
+6. **Agent in the Wild** — feral/uncontrolled agents
+7. **Suicidal Agents** — self-terminating under conditions
+8. **Mortal-Aware Agents** — conscious of their own mortality
+9. **Insured Agents** — risk-hedged, backed by guarantees
 
 ## Targets
 - **ALIFE 2026 Workshop** — Deadline: Feb 28, 2026
 - **CSSS 2026** — Submitted
 
 ## Structure
-- `literature/` — Literature review and related works
-- `venues/` — Potential venues and CFPs
-- `research-plan.md` — Research plan and timeline
-- `collaborators.md` — Potential collaborators
+- `literature/` — Literature review by subdomain + master review
+- `notes/` — Research log, related works, venues, collaborators, research plan
+
+## GitHub
+https://github.com/realitydeslab/Agent-Ethology
