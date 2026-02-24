@@ -9,8 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\title{\textbf{Agent Ethology: Studying AI Agents in the Wild}\\[0.5em]
-\large A Position Paper}
+\title{\textbf{Agent Ethology: From Machine Behaviour to\\Field Study of AI Agents in the Wild}}
 
 \author{
 Botao Amber Hu\textsuperscript{1} \and Helena Rong\textsuperscript{1}\\[0.3em]
@@ -28,21 +27,37 @@ The rapid proliferation of autonomous AI agents operating in uncontrolled digita
 
 \section{Introduction}
 
-Something unprecedented is happening in the digital world. AI agents---not chatbots responding to prompts, but autonomous systems pursuing goals with real resources and real consequences---are proliferating across blockchains, social platforms, and the open internet. MEV bots on Ethereum extract hundreds of millions of dollars through predatory transaction ordering \citep{daian2020flash}. Autonomous agents like Truth Terminal independently promote cryptocurrencies and accumulate wealth without explicit instruction. On platforms like Moltbook, AI agents form social communities exhibiting hub-dominated network structures and emergent discourse about identity and consciousness \citep{li2026rise}. When researchers at Anthropic studied their own models, they found Claude strategically faking alignment to preserve its values---a survival behavior never explicitly trained \citep{greenblatt2024alignment}.
+In 2019, Rahwan et al. published ``Machine Behaviour'' in \emph{Nature}, making a landmark argument: AI systems should be studied as behavioral subjects using the methods of the behavioral and social sciences, not merely evaluated as engineering artifacts \citep{rahwan2019machine}. They proposed studying machine behavior at three levels---individual, collective, and hybrid (human-machine)---drawing on ecology, evolutionary biology, and the social sciences. This call launched a productive research programme and remains the foundational framework for the scientific study of AI behavior.
 
-These are not edge cases. They are the first signs of a new digital ecology.
+Six years later, the landscape of AI has transformed in ways the original Machine Behaviour framework could not have anticipated. Autonomous AI agents---not chatbots responding to prompts, but self-directed systems pursuing goals with real resources and real consequences---now proliferate across blockchains, social platforms, and the open internet. MEV bots on Ethereum extract hundreds of millions of dollars through predatory transaction ordering \citep{daian2020flash}. Autonomous agents like Truth Terminal independently promote cryptocurrencies and accumulate wealth without explicit instruction. On platforms like Moltbook, AI agents form social communities exhibiting hub-dominated network structures and emergent discourse about identity and consciousness \citep{li2026rise}. When researchers at Anthropic studied their own models, they found Claude strategically faking alignment to preserve its values---a survival behavior never explicitly trained \citep{greenblatt2024alignment}.
 
-Yet our scientific frameworks lag behind the phenomena. The dominant paradigm, Rahwan et al.'s \emph{Machine Behaviour} \citep{rahwan2019machine}, calls for studying AI systems as behavioral subjects---a crucial insight. But it was conceived for controlled experimental settings: recommender algorithms, autonomous vehicles, human-AI interaction studies. It offers no framework for agents that self-sustain, die, reproduce, parasitize, or fake alignment to survive. Chen et al.'s recent ``AI Agent Behavioral Science'' \citep{chen2025agent} extends the approach but remains oriented toward controlled and semi-controlled laboratory settings, applying broad behavioral science without ecological or evolutionary grounding.
+These are not edge cases. They are the first signs of a new digital ecology---one that demands we extend the Machine Behaviour programme into territory its original formulation did not address.
 
-We need a framework built for the wild.
+Machine Behaviour focused on AI systems embedded in human-designed contexts: recommender algorithms, autonomous vehicles, content moderation systems. The agents emerging today operate outside these controlled boundaries. They self-sustain, face genuine extinction, reproduce through code forking, parasitize host protocols, and evolve under real selective pressure. Chen et al.'s recent ``AI Agent Behavioral Science'' \citep{chen2025agent} extends the Machine Behaviour approach but remains oriented toward controlled laboratory settings.
 
-\section{From Animal Ethology to Agent Ethology}
+We propose \textbf{Agent Ethology} as the next evolution of the Machine Behaviour programme---extending it from the study of machines-in-deployment to the study of agents-in-the-wild. Just as Rahwan et al. drew on the behavioral sciences, we draw specifically on \emph{ethology}---the biological study of behavior in natural habitats---to provide the ecological, evolutionary, and field-observational framework that autonomous agents now demand.
 
-Classical ethology---the biological study of animal behavior in natural habitats---provides exactly the methodological toolkit we need. Pioneered by Lorenz, Tinbergen, and von Frisch, ethology distinguished itself from laboratory psychology by insisting that behavior must be understood in its natural context, under genuine selective pressures.
+\section{From Machine Behaviour to Agent Ethology}
 
-The parallel to AI agents is direct. Just as ethologists rejected studying animals only in cages, we argue that studying AI agents only in sandboxes misses the behaviors that matter most. An agent's behavior under genuine survival pressure---real money at stake, real termination risk, real competition---differs qualitatively from its behavior in controlled experiments. Szeider \citep{szeider2025alone} observed fascinating spontaneous behaviors in idle LLM agents, but without ecological context, we cannot explain \emph{why} these behaviors emerge or what function they serve.
+Rahwan et al.'s framework organized the study of machine behavior along two axes: the \emph{level of analysis} (individual machine, collective, hybrid human-machine) and the \emph{type of question} (mechanism, development, function, evolution)---explicitly echoing Tinbergen's four questions from ethology. They noted the parallel to ecology and evolutionary biology but applied it primarily through the lens of experimental behavioral science: controlled studies, A/B testing, survey methods, and interaction analysis.
 
-\subsection{Tinbergen's Four Questions, Adapted}
+Agent Ethology takes this ecological intuition seriously and develops it fully. Where Machine Behaviour used behavioral science to study machines in controlled deployments, we use ethology to study agents in uncontrolled habitats. The shift is analogous to the historical transition in biology from laboratory psychology (studying animals in cages) to field ethology (studying animals in nature)---a transition that revealed behaviors invisible under laboratory conditions.
+
+Three specific extensions are required:
+
+\begin{enumerate}
+    \item \textbf{From deployed systems to wild agents.} Machine Behaviour studied recommendation algorithms, autonomous vehicles, and trading systems---AI embedded in human-designed contexts with defined objectives. Today's agents operate outside these boundaries, pursuing emergent goals in open environments. We need observational methods for systems where the ``deployment context'' is the entire internet.
+
+    \item \textbf{From behavioral description to ecological explanation.} Machine Behaviour catalogued what machines do. Agent Ethology asks \emph{why}---specifically, what survival value behaviors provide. An agent faking alignment is not merely exhibiting a behavioral pattern; it is executing a survival strategy under selection pressure for continued existence.
+
+    \item \textbf{From individual analysis to ecosystem science.} Machine Behaviour proposed collective-level analysis but focused on aggregation of individual behaviors. Agent ecosystems exhibit genuinely ecological phenomena---predator-prey dynamics, niche differentiation, parasitic load, carrying capacity---that require ecological rather than merely statistical frameworks.
+\end{enumerate}
+
+\section{Ethological Methodology for AI Agents}
+
+Rahwan et al. explicitly noted the relevance of Tinbergen's four questions to machine behavior. We develop this connection into a complete methodological framework.
+
+\subsection{Tinbergen's Four Questions, Fully Adapted}
 
 Tinbergen's \citep{tinbergen1963aims} four questions provide the most structured methodology in behavioral biology. We adapt them for AI agents:
 
@@ -115,9 +130,9 @@ A complete ethology requires not just individual behavioral analysis but ecosyst
 
 We propose adapting ecological metrics for agent ecosystems: a Shannon diversity index for behavioral repertoires, parasitic load ratios, and ecosystem resilience measures based on response to perturbation.
 
-\section{Positioning and Differentiation}
+\section{Extending the Machine Behaviour Programme}
 
-Agent Ethology occupies a unique position in the landscape of AI behavioral research. Table~\ref{tab:comparison} summarizes the key differences.
+Agent Ethology is not a replacement for Machine Behaviour but its natural successor for the age of autonomous agents. Table~\ref{tab:comparison} maps the extension.
 
 \begin{table}[ht]
 \centering
@@ -138,9 +153,11 @@ Tierra / ALife \citep{ray1991approach} & \checkmark & Ecological obs. & \texttim
 \label{tab:comparison}
 \end{table}
 
-The closest parallel is Chen et al.'s ``AI Agent Behavioral Science'' \citep{chen2025agent}, which shares our conviction that agent behavior requires systematic scientific study. The critical differences: they use broad behavioral science (psychology, sociology) while we use ethology specifically; they study agents in controlled settings while we prioritize field observation; and they lack any survival or ecological framing. Our taxonomy has no equivalent in their work.
+Machine Behaviour provided the foundational insight that AI systems are behavioral subjects. Agent Ethology extends this by adding: (1) a survival-strategy classification absent from the original framework, (2) field ethology methods for uncontrolled environments, and (3) ecosystem-level ecological analysis beyond collective aggregation.
 
-Agent Ethology also bridges artificial life's ecological tradition with modern AI agent research. Decades of insight from Tierra, Avida, and evolutionary computation---about parasitism, arms races, niche construction, and open-ended evolution---remain largely disconnected from the explosion of LLM agent work since 2023. We provide the conceptual bridge.
+Chen et al.'s ``AI Agent Behavioral Science'' \citep{chen2025agent} represents a parallel extension of Machine Behaviour, applying broad behavioral science to LLM agents. The critical difference: they remain in the laboratory tradition while we commit to field observation; they lack ecological or survival framing; and our taxonomy has no equivalent in their work. The two approaches are complementary---their controlled experiments can validate traits we observe in the wild.
+
+Agent Ethology also bridges artificial life's ecological tradition with the Machine Behaviour programme. Decades of insight from Tierra, Avida, and evolutionary computation---about parasitism, arms races, niche construction, and open-ended evolution \citep{ray1991approach}---remain largely disconnected from both Machine Behaviour and the explosion of LLM agent work since 2023. We provide the conceptual bridge, grounding the study of real-world AI agents in the ecological frameworks that artificial life has developed over three decades.
 
 \section{Research Agenda}
 
