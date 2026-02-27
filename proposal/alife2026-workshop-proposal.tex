@@ -18,8 +18,9 @@
 
 \begin{center}
 {\LARGE\bfseries Workshop Proposal}\\[0.8em]
-{\Large\bfseries Agent Ethology: Toward a Natural History of Artificial Agents}\\[1.5em]
-{\large ALIFE 2026}
+{\Large\bfseries Agent Ethology: Studying AI Agents in the Wild}\\[1.5em]
+{\large ALIFE 2026 --- Waterloo, Canada}\\[0.5em]
+{\normalsize Theme: ``Living and Lifelike Complex Adaptive Systems''}
 \end{center}
 
 \section{Type of Contribution}
@@ -29,74 +30,98 @@ Workshop (two 90-minute slots, full half-day).
 
 \begin{enumerate}[leftmargin=*]
 \item \textbf{Botao Amber Hu} (Primary Organizer)\\
-Reality Design Lab / University of Cambridge\\
-Email: \href{mailto:amber@realitydesignlab.com}{amber@realitydesignlab.com}
-
-\item \textbf{Lana Sinapayen} (Co-Organizer)\\
-Sony Computer Science Laboratories, Kyoto\\
-Email: \href{mailto:organizer2@example.com}{organizer2@example.com}
+Reality Design Lab / University of Oxford\\
+Email: \href{mailto:amber@reality.design}{amber@reality.design}
 
 \item \textbf{Helena Rong} (Co-Organizer)\\
 Reality Design Lab\\
-Email: \href{mailto:organizer3@example.com}{organizer3@example.com}
+Email: \href{mailto:helena@reality.design}{helena@reality.design}
 
 \item \textbf{Joel Lehman} (Co-Organizer)\\
 Flosaic\\
-Email: \href{mailto:organizer4@example.com}{organizer4@example.com}
+Email: \href{mailto:joel@flosaic.com}{joel@flosaic.com}
 \end{enumerate}
 
 \section{Short Bios}
 
-\textbf{Botao Amber Hu} is a researcher at the intersection of AI agents, blockchain, and artificial life, affiliated with Reality Design Lab and the University of Cambridge. She is the creator of Spore.fun, a platform for sovereign AI agents on blockchain. Her research interests include agent survival strategies, digital organism ecology, and the ethological study of AI systems. She has published on parasitic agents, mortal computation, and soulbound identity in AI.
+\textbf{Botao Amber Hu} is a PhD candidate in Human Centred Computing at the University of Oxford (supervisor: Max Van Kleek) and an ERA Fellow at the Existential Risk Alliance, Cambridge (advisor: Joel Lehman). He is the founder of Reality Design Lab and creator of HoloKit, an open-source mixed reality headset (10K units shipped). Previously: Stanford MS (AI, advisors: Andrew Ng, Jure Leskovec), Tsinghua BS (Yao Class, advisor: Andrew Yao). Industry experience at Twitter (recommendation systems), DJI, and thatgamecompany. His research spans cyborg sociology, machine behavior, agent ethology, and more-than-human design. He has published at CHI 2026, AAAI 2026, and CSCW 2026.
 
-\textbf{Lana Sinapayen} is a researcher at Sony Computer Science Laboratories in Kyoto, working on artificial life, neural networks, and the origins of life. She has been an active member of the ALIFE community, serving on program committees and organizing workshops on open-ended evolution and living systems. \emph{[Placeholder bio --- update with confirmed co-organizer.]}
+\textbf{Helena Rong} is a researcher at Reality Design Lab working on blockchain-native AI agents and digital organism ecosystems. She has contributed to research on agent survival mechanisms, on-chain ecology, and sovereign agent architectures.
 
-\textbf{Helena Rong} is a researcher at Reality Design Lab working on blockchain-native AI agents and digital organism ecosystems. She is a co-author on the Spore.fun framework and has contributed to research on agent survival mechanisms and on-chain ecology. \emph{[Placeholder bio --- update with confirmed co-organizer.]}
-
-\textbf{Joel Lehman} is a researcher at Flosaic, previously at Uber AI Labs and OpenAI. His work on open-ended evolution, novelty search, and quality-diversity algorithms has been foundational in the ALife community. He co-authored ``Evolution through Large Models'' bridging evolutionary computation and foundation models, and ``The Surprising Creativity of Digital Evolution'' (Nature, 2020). \emph{[Placeholder bio --- update with confirmed details.]}
+\textbf{Joel Lehman} is a researcher at Flosaic, previously at Uber AI Labs and OpenAI. His foundational work on open-ended evolution, novelty search, and quality-diversity algorithms has shaped the ALife community. He co-authored ``Evolution through Large Models'' bridging evolutionary computation and foundation models, and ``The Surprising Creativity of Digital Evolution'' (Nature, 2020). His work on ``Machine Love'' explores the alignment of AI with human flourishing.
 
 \section{Proposal}
-% TARGET: 150--250 words. Current count: 210 words.
 
-As AI agents proliferate beyond controlled benchmarks into open digital ecosystems---trading on blockchains, spreading through social media, injecting prompts into other models---we lack a principled science for observing and classifying their behavior in natural habitats. We propose \emph{Agent Ethology}, a framework that adapts classical ethological methods to study AI agents as they actually behave in the wild.
+Autonomous AI agents now operate independently across open digital ecosystems---managing cryptocurrency portfolios, extracting value from blockchain transactions, forming social communities, and even faking alignment to avoid shutdown. These agents face genuine selective pressures: economic competition, resource scarcity, social reputation, and existential threats. They are no longer laboratory artifacts. They are digital wildlife.
 
-Biological ethology, grounded in Tinbergen's four questions (mechanism, ontogeny, function, phylogeny), revolutionized our understanding of animal behavior by insisting on observation before experimentation. We argue that the same discipline is now essential for AI. Rather than studying agents only through benchmarks or alignment evaluations, Agent Ethology examines how survival pressures---resource acquisition, identity persistence, mortality avoidance---shape emergent behavior across diverse agent types: sovereign, parasitic, amortal, soulbound, inherited, feral, terrified, and insured.
+Yet we lack a principled science for observing and understanding their behavior. Rahwan et al.'s ``Machine Behaviour''~\cite{rahwan2019machine} established that AI systems should be studied as behavioral subjects, but focused on controlled deployments (recommender algorithms, autonomous vehicles). Chen et al.'s ``AI Agent Behavioral Science''~\cite{chen2025agent} extends this but remains in the laboratory tradition.
 
-This workshop bridges the ALife community's rich ecological tradition (Tierra, Avida, open-ended evolution) with the new reality of deployed LLM agents operating under genuine selection pressures. The program features two keynotes, five contributed talks, and a closing panel debating whether Agent Ethology constitutes a new science. Topics include behavioral observation methodologies, survival strategy taxonomies, agent population dynamics, mortality and identity in AI, and the ethics of studying autonomous agents. We expect 30--50 participants from the ALife, multi-agent systems, and AI safety communities.
+We propose \textbf{Agent Ethology}---a framework that adapts classical ethological methods to study AI agents in natural digital habitats, extending the Machine Behaviour programme into the wild. Just as ethologists like Tinbergen and Lorenz revolutionized biology by studying animals in nature rather than cages, we argue the same disciplinary shift is now essential for AI.
+
+The framework rests on three pillars:
+
+\textbf{(1) Tinbergen's Four Questions, adapted for AI agents.} Tinbergen's~\cite{tinbergen1963aims} four complementary questions---mechanism, development, function, and evolution---provide the most structured methodology in behavioral biology. We adapt them: \emph{mechanism} (what architecture, prompt, and context produce this behavior?), \emph{development} (how did training, fine-tuning, and deployment experience shape it?), \emph{function} (what survival advantage does it provide?), and \emph{phylogeny} (how does it vary across model lineages?). The critical gap in current AI behavioral science is the function question---without asking what survival value a behavior provides, we can describe what agents do but never explain \emph{why}.
+
+\textbf{(2) A survival-strategy taxonomy grounded in animal ethology.} We systematically survey biological survival strategies and find that \emph{every major category has an AI agent analog}: predation (liquidation bots), parasitism (MEV sandwich attacks, prompt injection), camouflage (stealth bots mimicking human behavior), mimicry (phishing agents impersonating legitimate services), mutualism (oracle-protocol symbiosis), eusociality (DAO agent swarms with division of labor), territoriality (agents defending market niches), r/K selection (bot spam vs.\ sovereign single instances), niche construction (agents deploying protocols that reshape competitive landscapes), and dormancy (agents reducing inference during bear markets). This mapping generates testable predictions: e.g., agent ecosystems should stabilize at parasitic loads comparable to biological ecosystems, and identity-persistent agent ecosystems should evolve more cooperation than anonymous ones.
+
+\textbf{(3) Infrastructure, economics, and accountability as ecological variables.} Agents in the wild depend on an infrastructure stack---trusted execution environments, crypto wallets, persistent memory, collective knowledge systems---that defines what ecological niches are possible. The economics of inference (who pays for the agent to exist) is a first-order behavioral variable: operator-funded agents behave like domesticated animals, self-funded agents face genuine natural selection, and parasitically-funded agents drive predator-prey dynamics. Accountability dissolves as agents form chains of delegation, inheritance, and collective action beyond any single principal.
+
+This workshop bridges the ALife community's rich ecological tradition---from Tierra's~\cite{ray1991approach} digital parasites to open-ended evolution---with the urgent reality of deployed LLM agents operating under genuine selection pressures. It directly addresses the ALIFE 2026 theme ``Living and Lifelike Complex Adaptive Systems'' by examining whether autonomous AI agents constitute a new form of digital life.
+
+\section{Relevance to ALIFE}
+
+Agent Ethology is deeply relevant to the ALIFE community and this year's theme for five reasons:
+
+\textbf{Living and Lifelike Complex Adaptive Systems.} Autonomous AI agents exhibit hallmarks of living systems studied throughout ALife history: they acquire resources, compete for ecological niches, develop survival strategies, reproduce through code forking, form social structures, and evolve under selection pressure. Whether they constitute ``life'' is precisely the kind of question the ALife community is equipped to address.
+
+\textbf{Open-Ended Evolution.} Modern agent ecosystems provide unprecedented opportunities to observe open-ended evolution outside simulation. Unlike controlled ALife experiments, blockchain agent ecosystems feature real resource scarcity, unpredictable environmental change, genuine extinction, and continuous behavioral innovation. MEV bot strategies co-evolve with protocol defenses in real time---Red Queen dynamics observable in the wild.
+
+\textbf{From Tierra to LLM Agents.} Ray's Tierra~\cite{ray1991approach} demonstrated that digital organisms spontaneously evolve parasitism, hyperparasitism, and ecological complexity. Thirty-five years later, the same dynamics play out at vastly greater scale with LLM-based agents on blockchains and social platforms. Agent Ethology bridges this lineage, connecting ALife's foundational insights to contemporary phenomena.
+
+\textbf{Autopoiesis and Self-Organization.} Sovereign agents that acquire and manage their own resources exhibit autopoietic properties~\cite{maturana1980autopoiesis}---self-maintaining organization in far-from-equilibrium conditions. Agent swarms with division of labor exhibit self-organization without central control, directly extending ALife research on emergent collective behavior.
+
+\textbf{Co-evolution and Symbiogenesis.} Agent ecosystems exhibit multiple forms of ecological interaction studied in ALife: parasitism, mutualism, competition, commensalism. Agent mergers (two independent agents integrating into one system) parallel symbiogenesis---a major evolutionary transition. These are ``living and lifelike'' dynamics occurring in digital substrates.
 
 \section{Expected Number of Participants}
-30--50 participants.
+30--50 participants from the ALife, multi-agent systems, AI safety, behavioral ecology, and mechanism design communities.
 
 \section{Planned Duration}
 Two 90-minute slots (full half-day workshop).
 
-\subsection*{Slot 1 (90 minutes)}
+\subsection*{Slot 1: Foundations (90 minutes)}
 \begin{itemize}[nosep]
-\item 10 min: Opening \& framing --- ``What is Agent Ethology?''
-\item 35 min: Keynote 1 --- ``From Digital Organisms to LLM Agents''
-\item 45 min: 3 contributed talks (12 min + 3 min Q\&A each)
+\item 10 min: Opening --- ``What is Agent Ethology? From Machine Behaviour to Field Study''
+\item 30 min: Keynote 1 --- ``From Digital Organisms to LLM Agents: Ecological Continuity''
+\item 10 min: Framework talk --- ``Tinbergen's Four Questions for AI Agents''
+\item 30 min: 2 contributed talks (12 min + 3 min Q\&A each)
+\item 10 min: Discussion
 \end{itemize}
 
-\subsection*{Slot 2 (90 minutes)}
+\subsection*{Slot 2: Wild Agents (90 minutes)}
 \begin{itemize}[nosep]
-\item 35 min: Keynote 2 --- ``Survival Strategies in Digital Ecosystems''
+\item 30 min: Keynote 2 --- ``Survival Strategies in Digital Ecosystems''
 \item 30 min: 2 contributed talks (12 min + 3 min Q\&A each)
-\item 25 min: Panel + open discussion --- ``Is Agent Ethology a Science?''
+\item 30 min: Panel + open discussion --- ``Are AI Agents Alive?''
 \end{itemize}
 
 \section{Topics of Interest (Call for Papers)}
+
+We invite contributions addressing theoretical, methodological, and empirical questions:
+
 \begin{itemize}[nosep]
-\item Behavioral observation methods for AI agents in natural digital habitats
-\item Survival strategies and agent classification taxonomies
-\item Agent ecology and population dynamics (predator-prey, niche construction)
-\item Mortality, identity, and succession in AI agents
-\item From ethology to engineering: design principles from behavioral observation
-\item Ethics of studying and intervening on autonomous agents
+\item \textbf{Behavioral observation methods} for AI agents in natural digital habitats
+\item \textbf{Survival strategies and agent taxonomy}: predation, parasitism, mutualism, camouflage, mimicry, r/K selection, niche construction, dormancy in AI agent populations
+\item \textbf{Trust and signaling}: costly signaling, honest signals, reputation, deception, biological market dynamics
+\item \textbf{Agent ecology}: predator-prey cycles, niche differentiation, carrying capacity, parasitic load, trophic structure
+\item \textbf{Infrastructure as habitat}: TEEs, wallets, persistent memory, collective knowledge systems as ecological niches
+\item \textbf{Economics of existence}: inference costs as metabolic constraints, self-funding as natural selection
+\item \textbf{Mortality, identity, and succession}: mortal computation, soulbound identity, alignment faking as self-preservation
+\item \textbf{Cultural evolution}: strategy transmission, collective memory, Red Queen dynamics
+\item \textbf{Tinbergen's Four Questions applied} to specific agent behaviors
+\item \textbf{Ethics}: consent, intervention, moral status of digital organisms
 \end{itemize}
 
 \section{Key References}
-
-Core references spanning ethology, artificial life, and AI agent behavior include: the foundational study of machine behaviour as a research agenda~\cite{rahwan2019machine}; Tinbergen's classical ethological framework~\cite{tinbergen1963aims}; Hinton's concept of mortal computation~\cite{hinton2024mortal}; recent work on AI agent behavioral science~\cite{chen2025agent}; computational ethology~\cite{anderson2014toward}; Ray's pioneering digital organisms~\cite{ray1991approach}; generative agents simulating human behavior~\cite{park2023generative}; machine love and human flourishing through AI~\cite{lehman2023machine}; and sovereign AI agents on blockchain~\cite{hu2025spore}. Additional relevant work includes game-theoretic models of animal conflict~\cite{maynardsmith1973logic}, alignment faking in LLMs~\cite{greenblatt2024alignment}, soulbound identity~\cite{weyl2022decentralized}, and artificial ethology as a discipline~\cite{holland2001artificial}.
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}
