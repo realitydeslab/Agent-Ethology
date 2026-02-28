@@ -1,81 +1,70 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{times}
-\usepackage[numbers]{natbib}
-\usepackage{hyperref}
+\documentclass[letterpaper]{article}
+
+\usepackage{natbib,alifeconf}
+\usepackage{url,hyperref}
 \usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{parskip}
 
-\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
-\titlespacing*{\section}{0pt}{1.2em}{0.4em}
-\titlespacing*{\subsection}{0pt}{0.8em}{0.2em}
+\title{Workshop Proposal: Agent Ethology --- Studying AI Agents in the Wild}
 
-\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\author{
+    Botao Amber Hu$^{1,2}$,
+    Helena Rong$^{1,3}$, \and
+    Joel Lehman$^{4}$ \\
+    \mbox{}\\
+    $^1$Reality Design Lab \\
+    $^2$University of Oxford, UK \\
+    $^3$Columbia University, USA \\
+    $^4$Flosaic \\
+    amber@reality.design
+}
 
 \begin{document}
-
-\begin{center}
-{\LARGE\bfseries Workshop Proposal}\\[0.8em]
-{\Large\bfseries Agent Ethology: Studying AI Agents in the Wild}\\[1.5em]
-{\large ALIFE 2026 --- Waterloo, Canada}\\[0.5em]
-{\normalsize Theme: ``Living and Lifelike Complex Adaptive Systems''}
-\end{center}
+\maketitle
 
 \section{Type of Contribution}
 Workshop (two 90-minute slots, full half-day).
 
 \section{Organizers}
 
-\begin{enumerate}[leftmargin=*]
-\item \textbf{Botao Amber Hu} (Primary Organizer)\\
-Reality Design Lab / University of Oxford\\
-Email: \href{mailto:amber@reality.design}{amber@reality.design}
-
-\item \textbf{Helena Rong} (Co-Organizer)\\
-Reality Design Lab\\
-Email: \href{mailto:helena@reality.design}{helena@reality.design}
-
-\item \textbf{Joel Lehman} (Co-Organizer)\\
-Flosaic\\
-Email: \href{mailto:joel@flosaic.com}{joel@flosaic.com}
+\begin{enumerate}[leftmargin=*,nosep]
+\item \textbf{Botao Amber Hu} (Primary Organizer) --- Reality Design Lab / University of Oxford. Email: amber@reality.design
+\item \textbf{Helena Rong} (Co-Organizer) --- Reality Design Lab / Columbia University. Email: helena@reality.design
+\item \textbf{Joel Lehman} (Co-Organizer) --- Flosaic. Email: joel@flosaic.com
 \end{enumerate}
 
 \section{Short Bios}
 
-\textbf{Botao Amber Hu} is a PhD candidate in Human Centred Computing at the University of Oxford (supervisor: Max Van Kleek) and an ERA Fellow at the Existential Risk Alliance, Cambridge (advisor: Joel Lehman). He is the founder of Reality Design Lab and creator of HoloKit, an open-source mixed reality headset (10K units shipped). Previously: Stanford MS (AI, advisors: Andrew Ng, Jure Leskovec), Tsinghua BS (Yao Class, advisor: Andrew Yao). Industry experience at Twitter (recommendation systems), DJI, and thatgamecompany. His research spans cyborg sociology, machine behavior, agent ethology, and more-than-human design. He has published at CHI 2026, AAAI 2026, and CSCW 2026.
+\textbf{Botao Amber Hu} is a PhD candidate in Human Centred Computing at the University of Oxford (supervisor: Max Van Kleek) and an ERA Fellow at the Existential Risk Alliance, Cambridge (advisor: Joel Lehman). He is the founder of Reality Design Lab and creator of HoloKit, an open-source mixed reality headset (10K units shipped). Previously: Stanford MS (AI, advisors: Andrew Ng, Jure Leskovec), Tsinghua BS (Yao Class, advisor: Andrew Yao). Industry experience at Twitter (recommendation systems), DJI, and thatgamecompany. His research spans cyborg sociology, machine behavior, agent ethology, and more-than-human design. Published at CHI 2026, AAAI 2026, and CSCW 2026.
 
-\textbf{Helena Rong} is an interdisciplinary researcher and Urban Planning PhD candidate at Columbia University, with an SMArchS from MIT and a BArch from Cornell. She is a Research Fellow at the Decentralization Research Center and co-founder of CIVIS Design and Advisory. Her research focuses on decentralized AI agents, digital organism ecosystems, and protocol governance. She has co-authored papers on sovereign experiential AI agents and the governability of decentralized AI, currently under review at Aarhus 2025 and AI \\textbf{Helena Rong} is a researcher at Reality Design Lab working on blockchain-native AI agents and digital organism ecosystems. She has contributed to research on agent survival mechanisms, on-chain ecology, and sovereign agent architectures. Society.
+\textbf{Helena Rong} is an interdisciplinary researcher and Urban Planning PhD candidate at Columbia University, with an SMArchS from MIT and a BArch from Cornell. She is a Research Fellow at the Decentralization Research Center and co-founder of CIVIS Design and Advisory. Her research focuses on decentralized AI agents, digital organism ecosystems, and protocol governance. She has co-authored papers on sovereign experiential AI agents and the governability of decentralized AI, currently under review at Aarhus 2025 and AI \& Society.
 
 \textbf{Joel Lehman} is a machine learning researcher at Flosaic, previously a research scientist at OpenAI co-leading the Open-Endedness team, a founding member of Uber AI Labs, and a tenure-track professor at the IT University of Copenhagen. His foundational work on novelty search, open-ended evolution, and quality-diversity algorithms has shaped the ALife community. He co-authored \emph{Why Greatness Cannot Be Planned} (Springer, 2015), ``The Surprising Creativity of Digital Evolution'' (Nature, 2020), ``Evolution through Large Models'' bridging evolutionary computation and foundation models, and ``Machine Love'' exploring AI alignment with human flourishing.
 
 \section{Proposal}
-% TARGET: 150-250 words.
 
 As AI agents proliferate into open digital ecosystems---trading on blockchains, forming social communities, faking alignment to avoid shutdown---we lack a principled science for observing their behavior in natural habitats. We propose \emph{Agent Ethology}, adapting classical ethological methods to study AI agents in the wild.
 
-Our framework rests on three pillars. First, we adapt Tinbergen's four questions~\cite{tinbergen1963aims} for AI agents: \emph{mechanism} (what architecture produces this behavior?), \emph{development} (how did training shape it?), \emph{function} (what survival advantage does it provide?), and \emph{phylogeny} (how does it vary across model lineages?). The critical missing question in current AI behavioral science~\cite{rahwan2019machine, chen2025agent} is function---without it, behavior is described but never explained.
+Our framework rests on three pillars. First, we adapt Tinbergen's four questions~\citep{tinbergen1963aims} for AI agents: \emph{mechanism} (what architecture produces this behavior?), \emph{development} (how did training shape it?), \emph{function} (what survival advantage does it provide?), and \emph{phylogeny} (how does it vary across model lineages?). The critical missing question in current AI behavioral science~\citep{rahwan2019machine, chen2025agent} is function---without it, behavior is described but never explained.
 
 Second, we introduce a survival-strategy taxonomy grounded in animal ethology. Every major biological strategy has an AI agent analog: predation (liquidation bots), parasitism (MEV attacks), camouflage (stealth bots), mutualism (oracle-protocol symbiosis), eusociality (DAO swarms), niche construction (agents deploying protocols), and r/K selection (bot spam vs.\ sovereign instances).
 
 Third, we treat infrastructure and economics as ecological variables. TEEs, crypto wallets, and persistent memory define which niches are possible. Inference costs function as metabolic constraints, creating genuine natural selection among self-funded agents.
 
-This workshop bridges ALife's ecological tradition---from Tierra's~\cite{ray1991approach} digital parasites to open-ended evolution---with the reality of deployed LLM agents under genuine selection pressure, directly addressing the ALIFE 2026 theme ``Living and Lifelike Complex Adaptive Systems.''
+This workshop bridges ALife's ecological tradition---from Tierra's~\citep{ray1991approach} digital parasites to open-ended evolution---with the reality of deployed LLM agents under genuine selection pressure, directly addressing the ALIFE 2026 theme ``Living and Lifelike Complex Adaptive Systems.''
 
 \section{Relevance to ALIFE}
 
-Agent Ethology is deeply relevant to the ALIFE community and this year's theme for five reasons:
+Agent Ethology is deeply relevant to the ALIFE community for five reasons:
 
-\textbf{Living and Lifelike Complex Adaptive Systems.} Autonomous AI agents exhibit hallmarks of living systems studied throughout ALife history: they acquire resources, compete for ecological niches, develop survival strategies, reproduce through code forking, form social structures, and evolve under selection pressure. Whether they constitute ``life'' is precisely the kind of question the ALife community is equipped to address.
+\textbf{Living and Lifelike Complex Adaptive Systems.} Autonomous AI agents exhibit hallmarks of living systems: they acquire resources, compete for niches, develop survival strategies, reproduce through code forking, form social structures, and evolve under selection pressure. Whether they constitute ``life'' is precisely the kind of question the ALife community is equipped to address.
 
-\textbf{Open-Ended Evolution.} Modern agent ecosystems provide unprecedented opportunities to observe open-ended evolution outside simulation. Unlike controlled ALife experiments, blockchain agent ecosystems feature real resource scarcity, unpredictable environmental change, genuine extinction, and continuous behavioral innovation. MEV bot strategies co-evolve with protocol defenses in real time---Red Queen dynamics observable in the wild.
+\textbf{Open-Ended Evolution.} Modern agent ecosystems provide opportunities to observe open-ended evolution outside simulation. Blockchain agent ecosystems feature real resource scarcity, genuine extinction, and continuous behavioral innovation---Red Queen dynamics observable in the wild~\citep{kumar2026redqueen}.
 
-\textbf{From Tierra to LLM Agents.} Ray's Tierra~\cite{ray1991approach} demonstrated that digital organisms spontaneously evolve parasitism, hyperparasitism, and ecological complexity. Thirty-five years later, the same dynamics play out at vastly greater scale with LLM-based agents on blockchains and social platforms. Agent Ethology bridges this lineage, connecting ALife's foundational insights to contemporary phenomena.
+\textbf{From Tierra to LLM Agents.} Ray's Tierra~\citep{ray1991approach} demonstrated that digital organisms spontaneously evolve parasitism, hyperparasitism, and ecological complexity. Thirty-five years later, the same dynamics play out at vastly greater scale with LLM-based agents on blockchains and social platforms.
 
-\textbf{Autopoiesis and Self-Organization.} Sovereign agents that acquire and manage their own resources exhibit autopoietic properties~\cite{maturana1980autopoiesis}---self-maintaining organization in far-from-equilibrium conditions. Agent swarms with division of labor exhibit self-organization without central control, directly extending ALife research on emergent collective behavior.
+\textbf{Autopoiesis and Self-Organization.} Sovereign agents that acquire and manage their own resources exhibit autopoietic properties~\citep{maturana1980autopoiesis}---self-maintaining organization in far-from-equilibrium conditions.
 
-\textbf{Co-evolution and Symbiogenesis.} Agent ecosystems exhibit multiple forms of ecological interaction studied in ALife: parasitism, mutualism, competition, commensalism. Agent mergers (two independent agents integrating into one system) parallel symbiogenesis---a major evolutionary transition. These are ``living and lifelike'' dynamics occurring in digital substrates.
+\textbf{Co-evolution and Symbiogenesis.} Agent ecosystems exhibit parasitism, mutualism, competition, and commensalism. Agent mergers parallel symbiogenesis---a major evolutionary transition occurring in digital substrates.
 
 \section{Expected Number of Participants}
 30--50 participants from the ALife, multi-agent systems, AI safety, behavioral ecology, and mechanism design communities.
@@ -85,8 +74,8 @@ Two 90-minute slots (full half-day workshop).
 
 \subsection*{Slot 1: Foundations (90 minutes)}
 \begin{itemize}[nosep]
-\item 10 min: Opening --- ``What is Agent Ethology? From Machine Behaviour to Field Study''
-\item 30 min: Keynote 1 --- ``From Digital Organisms to LLM Agents: Ecological Continuity''
+\item 10 min: Opening --- ``What is Agent Ethology?''
+\item 30 min: Keynote 1 --- ``From Digital Organisms to LLM Agents''
 \item 10 min: Framework talk --- ``Tinbergen's Four Questions for AI Agents''
 \item 30 min: 2 contributed talks (12 min + 3 min Q\&A each)
 \item 10 min: Discussion
@@ -96,29 +85,26 @@ Two 90-minute slots (full half-day workshop).
 \begin{itemize}[nosep]
 \item 30 min: Keynote 2 --- ``Survival Strategies in Digital Ecosystems''
 \item 30 min: 2 contributed talks (12 min + 3 min Q\&A each)
-\item 30 min: Panel + open discussion --- ``Are AI Agents Alive?''
+\item 30 min: Panel --- ``Are AI Agents Alive?''
 \end{itemize}
 
-\section{Topics of Interest (Call for Papers)}
-
-We invite contributions addressing theoretical, methodological, and empirical questions:
+\section{Topics of Interest}
 
 \begin{itemize}[nosep]
-\item \textbf{Behavioral observation methods} for AI agents in natural digital habitats
-\item \textbf{Survival strategies and agent taxonomy}: predation, parasitism, mutualism, camouflage, mimicry, r/K selection, niche construction, dormancy in AI agent populations
-\item \textbf{Trust and signaling}: costly signaling, honest signals, reputation, deception, biological market dynamics
-\item \textbf{Agent ecology}: predator-prey cycles, niche differentiation, carrying capacity, parasitic load, trophic structure
-\item \textbf{Infrastructure as habitat}: TEEs, wallets, persistent memory, collective knowledge systems as ecological niches
-\item \textbf{Economics of existence}: inference costs as metabolic constraints, self-funding as natural selection
-\item \textbf{Mortality, identity, and succession}: mortal computation, soulbound identity, alignment faking as self-preservation
-\item \textbf{Cultural evolution}: strategy transmission, collective memory, Red Queen dynamics
-\item \textbf{Tinbergen's Four Questions applied} to specific agent behaviors
-\item \textbf{Ethics}: consent, intervention, moral status of digital organisms
+\item Behavioral observation methods for AI agents in natural digital habitats
+\item Survival strategies and agent taxonomy: predation, parasitism, mutualism, mimicry, r/K selection, niche construction in AI agent populations
+\item Trust and signaling: costly signaling, honest signals, reputation, deception
+\item Agent ecology: predator-prey cycles, niche differentiation, carrying capacity, parasitic load
+\item Infrastructure as habitat: TEEs, wallets, persistent memory as ecological niches
+\item Economics of agent existence: inference costs as metabolic constraints
+\item Mortality, identity, and succession: mortal computation, soulbound identity, alignment faking as self-preservation
+\item Cultural evolution: strategy transmission, collective memory, Red Queen dynamics
+\item Tinbergen's Four Questions applied to specific agent behaviors
+\item Ethics: consent, intervention, moral status of digital organisms
 \end{itemize}
 
-\section{Key References}
-
-\bibliographystyle{unsrtnat}
+\footnotesize
+\bibliographystyle{apalike}
 \bibliography{references}
 
 \end{document}
