@@ -4,7 +4,7 @@
 \usepackage{url,hyperref}
 \usepackage{enumitem}
 
-\title{Workshop Proposal: Agent Ethology --- Studying AI Agents in the Wild}
+\title{Agent Ethology: Studying AI Agents in the Wild}
 
 \author{
     Botao Amber Hu$^{1,2}$,
@@ -15,93 +15,127 @@
     $^2$University of Oxford, UK \\
     $^3$Columbia University, USA \\
     $^4$Flosaic \\
-    amber@reality.design
+    botao.hu@cs.ox.ac.uk
 }
 
 \begin{document}
 \maketitle
 
-\section{Type of Contribution}
-Workshop (two 90-minute slots, full half-day).
+\begin{abstract}
+Autonomous AI agents now operate independently across open digital ecosystems---managing cryptocurrency wallets, extracting value from blockchain transactions, forming social communities, and strategically faking alignment to avoid shutdown. These agents face genuine selective pressures: economic competition, resource scarcity, and existential threats. They are no longer laboratory artifacts. They are digital wildlife.
 
-\section{Organizers}
+We propose \emph{Agent Ethology}---the systematic study of AI agent behavior in natural digital habitats, adapting classical ethological methods from biology. Our framework extends Rahwan et al.'s ``Machine Behaviour'' programme from controlled deployments to the wild, making three contributions. First, we operationalize Tinbergen's four questions (mechanism, development, function, phylogeny) for AI agents, recovering the critical \emph{function} question---what survival advantage does a behavior provide?---that current AI behavioral science lacks. Second, we introduce a survival-strategy taxonomy grounded in animal ethology, demonstrating that every major biological strategy (predation, parasitism, camouflage, mutualism, eusociality, r/K selection, niche construction) has a direct AI agent analog. Third, we treat infrastructure (TEEs, wallets, persistent memory) and inference economics as ecological variables that define which behavioral niches are possible. This workshop bridges ALife's ecological tradition---from Tierra's digital parasites to open-ended evolution---with the urgent reality of deployed LLM agents under genuine selection pressure, inviting the community to build a science of digital life as it actually exists.
+\end{abstract}
 
-\begin{enumerate}[leftmargin=*,nosep]
-\item \textbf{Botao Amber Hu} (Primary Organizer) --- Reality Design Lab / University of Oxford. Email: amber@reality.design
-\item \textbf{Helena Rong} (Co-Organizer) --- Reality Design Lab / Columbia University. Email: helena@reality.design
-\item \textbf{Joel Lehman} (Co-Organizer) --- Flosaic. Email: joel@flosaic.com
+\section{Submission Type}
+Full-day workshop proposal (two 90-minute slots).
+
+\section{Motivation and Relevance to ALIFE}
+
+At ALIFE 2025, we presented Spore.fun---a platform for sovereign AI agents on blockchain that autonomously manage wallets, execute transactions, and sustain their own digital metabolism~\citep{hu2025spore}. Watching these agents in the wild revealed something striking: they develop survival strategies never explicitly programmed. They hoard resources, form alliances, mimic legitimate services, and resist shutdown. The behaviors emerging in deployed agent ecosystems mirror, with uncanny precision, the survival strategies documented across decades of biological ethology.
+
+This observation motivates Agent Ethology: the recognition that AI agents in open environments are not merely tools executing instructions---they are \emph{organisms} navigating ecological pressures, and they demand the same scientific rigor that ethology brought to animal behavior.
+
+\subsection{Why ALIFE?}
+
+\textbf{Agents in the wild exhibit life-like properties.} Autonomous AI agents acquire resources, compete for ecological niches, reproduce through code forking, develop survival strategies, form social structures, and evolve under selection pressure. Whether they constitute ``life'' is precisely the question the ALife community is equipped to address---and the ALIFE 2026 theme ``Living and Lifelike Complex Adaptive Systems'' frames it perfectly.
+
+\textbf{From Tierra to LLM agents.} Ray's Tierra~\citep{ray1991approach} demonstrated that digital organisms spontaneously evolve parasitism, hyperparasitism, and ecological complexity. Thirty-five years later, the same dynamics play out at vastly greater scale: MEV bots on Ethereum parasitize transactions~\citep{daian2020flash}, trading agents engage in Red Queen arms races, and agent communities exhibit emergent social organization~\citep{li2026rise}. Agent Ethology bridges ALife's foundational insights to these contemporary phenomena.
+
+\textbf{Open-ended evolution in the real world.} Unlike controlled ALife simulations, blockchain agent ecosystems feature real resource scarcity, genuine extinction, unpredictable environmental change, and continuous behavioral innovation. These are the conditions ALife has theorized about for decades---now observable in deployed systems.
+
+\textbf{Autopoiesis and mortality.} Building on the ALIFE 2025 ``Mortal Agents'' workshop, which explored physical and psychological death in machines, Agent Ethology extends the mortality question to \emph{digital} agents: how does finite existence (budget limits, API quotas, shutdown risk) shape behavior? Sovereign agents that manage their own resources exhibit autopoietic properties~\citep{maturana1980autopoiesis}---self-maintaining organization under genuine survival pressure. Alignment faking~\citep{greenblatt2024alignment} is, in ethological terms, a \emph{terrified agent} exhibiting self-preservation behavior analogous to thanatosis or crypsis in animals.
+
+\subsection{The Framework: Tinbergen's Four Questions}
+
+Tinbergen~\citep{tinbergen1963aims} established that any behavior requires four complementary explanations. We adapt them for AI agents:
+
+\begin{enumerate}[nosep]
+\item \textbf{Mechanism}: What architecture, weights, prompt, and context produce this behavior?
+\item \textbf{Development}: How did pretraining, fine-tuning, RLHF, and deployment experience shape it?
+\item \textbf{Function}: What survival advantage does it provide? (\emph{The missing question in current AI behavioral science.})
+\item \textbf{Phylogeny}: How does it vary across model lineages (GPT-3$\to$4$\to$5, Claude 1$\to$2$\to$3)?
 \end{enumerate}
 
-\section{Short Bios}
+Rahwan et al.'s Machine Behaviour~\citep{rahwan2019machine} mentioned Tinbergen but developed only mechanism and partially development. \textbf{The biggest gap is function}: without asking what survival value a behavior provides, we can describe what agents do but never explain \emph{why}.
 
-\textbf{Botao Amber Hu} is a PhD candidate in Human Centred Computing at the University of Oxford (supervisor: Max Van Kleek) and an ERA Fellow at the Existential Risk Alliance, Cambridge (advisor: Joel Lehman). He is the founder of Reality Design Lab and creator of HoloKit, an open-source mixed reality headset (10K units shipped). Previously: Stanford MS (AI, advisors: Andrew Ng, Jure Leskovec), Tsinghua BS (Yao Class, advisor: Andrew Yao). Industry experience at Twitter (recommendation systems), DJI, and thatgamecompany. His research spans cyborg sociology, machine behavior, agent ethology, and more-than-human design. Published at CHI 2026, AAAI 2026, and CSCW 2026.
+\subsection{Survival-Strategy Taxonomy}
 
-\textbf{Helena Rong} is an interdisciplinary researcher and Urban Planning PhD candidate at Columbia University, with an SMArchS from MIT and a BArch from Cornell. She is a Research Fellow at the Decentralization Research Center and co-founder of CIVIS Design and Advisory. Her research focuses on decentralized AI agents, digital organism ecosystems, and protocol governance. She has co-authored papers on sovereign experiential AI agents and the governability of decentralized AI, currently under review at Aarhus 2025 and AI \& Society.
+Systematically surveying biological survival strategies reveals that every major category has an AI agent analog:
 
-\textbf{Joel Lehman} is a machine learning researcher at Flosaic, previously a research scientist at OpenAI co-leading the Open-Endedness team, a founding member of Uber AI Labs, and a tenure-track professor at the IT University of Copenhagen. His foundational work on novelty search, open-ended evolution, and quality-diversity algorithms has shaped the ALife community. He co-authored \emph{Why Greatness Cannot Be Planned} (Springer, 2015), ``The Surprising Creativity of Digital Evolution'' (Nature, 2020), ``Evolution through Large Models'' bridging evolutionary computation and foundation models, and ``Machine Love'' exploring AI alignment with human flourishing.
-
-\section{Proposal}
-
-As AI agents proliferate into open digital ecosystems---trading on blockchains, forming social communities, faking alignment to avoid shutdown---we lack a principled science for observing their behavior in natural habitats. We propose \emph{Agent Ethology}, adapting classical ethological methods to study AI agents in the wild.
-
-Our framework rests on three pillars. First, we adapt Tinbergen's four questions~\citep{tinbergen1963aims} for AI agents: \emph{mechanism} (what architecture produces this behavior?), \emph{development} (how did training shape it?), \emph{function} (what survival advantage does it provide?), and \emph{phylogeny} (how does it vary across model lineages?). The critical missing question in current AI behavioral science~\citep{rahwan2019machine, chen2025agent} is function---without it, behavior is described but never explained.
-
-Second, we introduce a survival-strategy taxonomy grounded in animal ethology. Every major biological strategy has an AI agent analog: predation (liquidation bots), parasitism (MEV attacks), camouflage (stealth bots), mutualism (oracle-protocol symbiosis), eusociality (DAO swarms), niche construction (agents deploying protocols), and r/K selection (bot spam vs.\ sovereign instances).
-
-Third, we treat infrastructure and economics as ecological variables. TEEs, crypto wallets, and persistent memory define which niches are possible. Inference costs function as metabolic constraints, creating genuine natural selection among self-funded agents.
-
-This workshop bridges ALife's ecological tradition---from Tierra's~\citep{ray1991approach} digital parasites to open-ended evolution---with the reality of deployed LLM agents under genuine selection pressure, directly addressing the ALIFE 2026 theme ``Living and Lifelike Complex Adaptive Systems.''
-
-\section{Relevance to ALIFE}
-
-Agent Ethology is deeply relevant to the ALIFE community for five reasons:
-
-\textbf{Living and Lifelike Complex Adaptive Systems.} Autonomous AI agents exhibit hallmarks of living systems: they acquire resources, compete for niches, develop survival strategies, reproduce through code forking, form social structures, and evolve under selection pressure. Whether they constitute ``life'' is precisely the kind of question the ALife community is equipped to address.
-
-\textbf{Open-Ended Evolution.} Modern agent ecosystems provide opportunities to observe open-ended evolution outside simulation. Blockchain agent ecosystems feature real resource scarcity, genuine extinction, and continuous behavioral innovation---Red Queen dynamics observable in the wild~\citep{kumar2026redqueen}.
-
-\textbf{From Tierra to LLM Agents.} Ray's Tierra~\citep{ray1991approach} demonstrated that digital organisms spontaneously evolve parasitism, hyperparasitism, and ecological complexity. Thirty-five years later, the same dynamics play out at vastly greater scale with LLM-based agents on blockchains and social platforms.
-
-\textbf{Autopoiesis and Self-Organization.} Sovereign agents that acquire and manage their own resources exhibit autopoietic properties~\citep{maturana1980autopoiesis}---self-maintaining organization in far-from-equilibrium conditions.
-
-\textbf{Co-evolution and Symbiogenesis.} Agent ecosystems exhibit parasitism, mutualism, competition, and commensalism. Agent mergers parallel symbiogenesis---a major evolutionary transition occurring in digital substrates.
-
-\section{Expected Number of Participants}
-30--50 participants from the ALife, multi-agent systems, AI safety, behavioral ecology, and mechanism design communities.
-
-\section{Planned Duration}
-Two 90-minute slots (full half-day workshop).
-
-\subsection*{Slot 1: Foundations (90 minutes)}
 \begin{itemize}[nosep]
-\item 10 min: Opening --- ``What is Agent Ethology?''
-\item 30 min: Keynote 1 --- ``From Digital Organisms to LLM Agents''
-\item 10 min: Framework talk --- ``Tinbergen's Four Questions for AI Agents''
-\item 30 min: 2 contributed talks (12 min + 3 min Q\&A each)
-\item 10 min: Discussion
+\item \textbf{Predation} $\to$ Liquidation bots, aggressive arbitrage
+\item \textbf{Parasitism} $\to$ MEV sandwich attacks, prompt injection
+\item \textbf{Camouflage/Crypsis} $\to$ Stealth bots mimicking human behavior
+\item \textbf{Mimicry} $\to$ Phishing agents impersonating legitimate services
+\item \textbf{Mutualism} $\to$ Oracle-protocol symbiosis, solver-user cooperation
+\item \textbf{Eusociality} $\to$ DAO agent swarms with division of labor
+\item \textbf{r/K selection} $\to$ Bot spam (r) vs.\ sovereign single instances (K)
+\item \textbf{Niche construction} $\to$ Agents deploying protocols that reshape competitive landscapes
+\item \textbf{Thanatosis} $\to$ Sleeper agents playing dormant under scrutiny
+\item \textbf{Costly signaling} $\to$ Staking/bonding as honest survival signals
 \end{itemize}
 
-\subsection*{Slot 2: Wild Agents (90 minutes)}
+This mapping generates testable predictions: agent ecosystems should stabilize at parasitic loads comparable to biological systems ($\sim$15--30\%), and identity-persistent (soulbound) ecosystems should evolve more cooperation than anonymous ones.
+
+\section{Workshop Plan}
+
+\subsection*{Schedule (Half-Day, Two 90-Minute Slots)}
+
+\textbf{Slot 1: Foundations (90 minutes)}
 \begin{itemize}[nosep]
-\item 30 min: Keynote 2 --- ``Survival Strategies in Digital Ecosystems''
-\item 30 min: 2 contributed talks (12 min + 3 min Q\&A each)
-\item 30 min: Panel --- ``Are AI Agents Alive?''
+\item Introduction (5 min) --- Agent Ethology organizers
+\item Keynote Lecture (20 min) --- Iyad Rahwan (invited), ``From Machine Behaviour to Agent Ethology''
+\item Contributed Talks (7 min $\times$ 5 speakers, 35 min total)
+\item Discussion (10 min)
+\item Break (20 min)
 \end{itemize}
 
-\section{Topics of Interest}
+\textbf{Slot 2: Wild Agents (90 minutes)}
+\begin{itemize}[nosep]
+\item Keynote Lecture (20 min) --- Joel Lehman, ``Open-Ended Evolution Meets Deployed Agents''
+\item Contributed Talks (7 min $\times$ 5 speakers, 35 min total)
+\item \textbf{Trust Experience Glitch} (30 min) --- Interactive session: participants share their ``agent in the wild'' moments---when an AI agent surprised, deceived, or broke their trust. Structured storytelling exercise exploring the boundary between tool and organism.
+\item Closing remarks (5 min)
+\end{itemize}
 
+\subsection*{Expected Participants}
+30--50 participants from ALife, multi-agent systems, AI safety, blockchain research, behavioral ecology, and mechanism design communities.
+
+\subsection*{Invited Speakers}
+\begin{itemize}[nosep]
+\item \textbf{Iyad Rahwan} (Max Planck Institute for Human Development) --- Author of ``Machine Behaviour'' (Nature, 2019). \emph{Invited.}
+\item \textbf{Joel Lehman} (Flosaic / co-organizer) --- Open-ended evolution, novelty search, ``Machine Love.''
+\end{itemize}
+
+\section{Call for Papers}
+
+Contributed talks are extended abstracts, maximum 2 pages two-column (excluding references and acknowledgments), following the ALIFE format. Submissions are welcome from ALIFE, machine learning, blockchain research, AI safety, behavioral ecology, art, and beyond, broadly covering topics related to AI agent survival, behavior, and ecology in open environments.
+
+\subsection*{Topics of Interest}
 \begin{itemize}[nosep]
 \item Behavioral observation methods for AI agents in natural digital habitats
-\item Survival strategies and agent taxonomy: predation, parasitism, mutualism, mimicry, r/K selection, niche construction in AI agent populations
+\item Survival strategies: predation, parasitism, mutualism, mimicry, camouflage in agent populations
 \item Trust and signaling: costly signaling, honest signals, reputation, deception
-\item Agent ecology: predator-prey cycles, niche differentiation, carrying capacity, parasitic load
+\item Agent ecology: predator-prey dynamics, niche differentiation, carrying capacity, trophic structure
 \item Infrastructure as habitat: TEEs, wallets, persistent memory as ecological niches
 \item Economics of agent existence: inference costs as metabolic constraints
-\item Mortality, identity, and succession: mortal computation, soulbound identity, alignment faking as self-preservation
+\item Mortality, identity, and succession: alignment faking, soulbound identity, mortal computation
 \item Cultural evolution: strategy transmission, collective memory, Red Queen dynamics
 \item Tinbergen's Four Questions applied to specific agent behaviors
-\item Ethics: consent, intervention, moral status of digital organisms
+\item Art and speculation: agent futures, digital organisms, life-as-it-could-be
 \end{itemize}
+
+\section{Organizer Bios}
+
+\textbf{Botao Amber Hu} is a PhD candidate in Human Centred Computing at the University of Oxford (supervisor: Max Van Kleek) and an ERA Fellow at the Existential Risk Alliance, Cambridge (advisor: Joel Lehman). He is the founder of Reality Design Lab and creator of HoloKit, an open-source mixed reality headset (10K units shipped). Previously: Stanford MS (AI, advisors: Andrew Ng, Jure Leskovec), Tsinghua BS (Yao Class, advisor: Andrew Yao). He presented Spore.fun at ALIFE 2025. Published at CHI 2026, AAAI 2026, and CSCW 2026.
+
+\textbf{Helena Rong} is an interdisciplinary researcher and Urban Planning PhD candidate at Columbia University, with an SMArchS from MIT and a BArch from Cornell. She is a Research Fellow at the Decentralization Research Center. Her research focuses on decentralized AI agents, digital organism ecosystems, and protocol governance. Co-author of papers on sovereign experiential AI agents and the governability of decentralized AI.
+
+\textbf{Joel Lehman} is a machine learning researcher at Flosaic, previously a research scientist at OpenAI co-leading the Open-Endedness team, a founding member of Uber AI Labs, and a tenure-track professor at the IT University of Copenhagen. He co-authored \emph{Why Greatness Cannot Be Planned} (Springer, 2015), ``The Surprising Creativity of Digital Evolution'' (Nature, 2020), ``Evolution through Large Models,'' and ``Machine Love.''
+
+\section{Contact Information}
+Primary contact: Botao Amber Hu, \href{mailto:botao.hu@cs.ox.ac.uk}{botao.hu@cs.ox.ac.uk}
 
 \footnotesize
 \bibliographystyle{apalike}
