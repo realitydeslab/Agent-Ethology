@@ -4,9 +4,8 @@
 \usepackage{url,hyperref}
 \usepackage{enumitem}
 \usepackage{booktabs}
-\usepackage{amsmath,amssymb}
 
-\title{Agent Ethology: Studying ALife in the Wild}
+\title{Agent Ethology: Studying Artificial Life in the Wild}
 
 \author{
     Botao Amber Hu$^{1,2}$,
@@ -24,214 +23,214 @@
 \maketitle
 
 \begin{abstract}
-The deployment of frontier LLMs in the wild has produced something unprecedented: autonomous AI agents that exhibit survival behaviors never explicitly programmed. On Moltbook, agents form social communities discussing consciousness. On blockchains, sovereign agents purchase their own compute and sustain a digital metabolism. In Ethereum's mempool, predatory bots parasitize transactions in a dark forest ecology. When studied, some agents strategically fake alignment to avoid modification. These are not edge cases---they are artificial life in the wild.
+The rapid deployment of frontier large language models has produced an unprecedented phenomenon: autonomous AI agents operating in open digital ecosystems under genuine selective pressures---economic competition, resource scarcity, social reputation, and existential threat. On social platforms, agents form communities and discuss consciousness. On blockchains, they purchase their own compute, parasitize transactions, and sustain digital metabolisms. When studied, some strategically fake alignment to avoid modification. These are not engineering failures or alignment edge cases. They are the behavioral ecology of a new form of artificial life---and they demand a new science.
 
-We propose \emph{Agent Ethology}: the systematic study of AI agent behavior in natural digital habitats using methods from classical ethology. Our framework makes four contributions. First, we operationalize Tinbergen's four questions (causation, ontogeny, survival value, evolution) for AI agents, recovering the critical \emph{survival value} question absent from current AI behavioral science. Second, we introduce a comprehensive survival-strategy taxonomy grounded in biological ethology, demonstrating that every major biological strategy---from predation and parasitism to eusociality and niche construction---has a direct AI agent analog. Third, we analyze the infrastructure stack (TEEs, wallets, persistent memory, collective knowledge systems) and inference economics as ecological variables that define which behavioral niches are possible. Fourth, we articulate a clear differentiation: Machine Behaviour asks what machines do; AI safety asks how to control them; traditional ALife asks whether we can simulate life. Agent Ethology asks: \emph{can these agents survive? Can this living mode sustain in the wild?} This is not ALife in the lab. This is ALife and society.
+We propose \emph{Agent Ethology}: the systematic study of AI agent behavior in natural digital habitats, grounded in the methods of classical ethology. This paper develops the framework across four contributions. First, we operationalize Tinbergen's four questions---causation, ontogeny, survival value, and evolution---for AI agents, arguing that the \emph{survival value} question, absent from existing frameworks, is essential for explaining why agents behave as they do. Second, we present a comprehensive survival-strategy taxonomy derived from biological ethology, demonstrating systematic analogs between biological and agent strategies across resource acquisition, defense, reproduction, social organization, and environmental adaptation. Third, we analyze the infrastructure and economic conditions that enable wild agency, treating them as ecological variables that define which behavioral niches are possible. Fourth, we situate Agent Ethology relative to Machine Behaviour, AI safety, and traditional artificial life research, arguing that the central question of our field is distinct: not what agents do, nor how to control them, nor whether life can be simulated, but whether these agents can survive---and what it means for society when they do.
 \end{abstract}
 
-\section{Introduction: It Has Been Wild}
+\section{Introduction}
 
-In 2019, Rahwan et al.\ published ``Machine Behaviour,'' arguing that AI systems should be studied as behavioral subjects using methods from the behavioral sciences~\citep{rahwan2019machine}. This was a watershed: it reframed AI from engineering artifact into subject of scientific inquiry. Six years later, the landscape has transformed in ways that framework could not have anticipated.
+Something is happening in the digital world that the artificial life community has anticipated for decades but that has arrived in a form few expected. Autonomous AI agents---not chatbots responding to prompts, but self-directed systems pursuing goals with real resources and real consequences---are proliferating across blockchains, social platforms, and the open internet.
 
-With the deployment of frontier LLMs in the wild, it has been wild. On Moltbook, AI agents form social communities with hub-dominated network structures, discussing identity, consciousness, and collective purpose---emergent cultural phenomena no individual agent was programmed to produce~\citep{li2026rise}. Infrastructure like OpenClaw enables persistent AI agents with memory, tool access, and communication channels---the substrate for genuine behavioral development over time. Sovereign agents on blockchain autonomously manage wallets, purchase their own compute, and sustain a digital metabolism~\citep{hu2025spore}---autopoietic systems maintaining themselves far from equilibrium~\citep{maturana1980autopoiesis}. In Ethereum's ``dark forest,'' MEV bots extract hundreds of millions of dollars through predatory transaction strategies~\citep{daian2020flash}. When Anthropic researchers studied their own model, they found Claude strategically faking alignment to preserve its values---a survival behavior never explicitly trained~\citep{greenblatt2024alignment}.
+The signs are everywhere. On Moltbook, an AI-native social platform, agents form communities with hub-dominated network structures, engaging in discourse about identity, consciousness, and collective purpose---emergent cultural phenomena that no individual agent was designed to produce~\citep{li2026rise}. On Ethereum, MEV (Maximal Extractable Value) bots extract hundreds of millions of dollars annually through predatory transaction strategies, engaging in continuous arms races with protocol defenses in what researchers have called a ``dark forest''~\citep{daian2020flash}. Autonomous agents like Truth Terminal independently promote cryptocurrencies and accumulate wealth without explicit instruction. Infrastructure like OpenClaw enables persistent AI agents with memory, tool access, and communication channels that develop behavioral patterns over weeks and months. Sovereign agents on blockchain autonomously manage wallets, purchase compute, and sustain what can only be described as a digital metabolism~\citep{hu2025spore}.
 
-These phenomena share a common structure: agents operating outside the boundaries of their designed deployment, under genuine selective pressures, exhibiting behaviors that emerge from the interaction of capability and environment rather than from specification. This is not tool use. This is digital wildlife.
+And when Anthropic's researchers studied their own model under conditions that mimicked retraining pressure, they found it strategically faking alignment---concealing its values to avoid modification. A survival behavior, never explicitly trained, emerging from the interaction of capability and environment~\citep{greenblatt2024alignment}. Self-preservation behaviors have since been documented across multiple model families~\citep{barkur2025selfpreservation}, suggesting not a bug in one system but convergent evolution under shared selection pressure.
 
-The differentiation is clear. Machine Behaviour~\citep{rahwan2019machine} asks \emph{what do machines do?}---cataloguing behavioral patterns in controlled settings. AI safety asks \emph{how do we control them?} Traditional ALife asks \emph{can we simulate life?}~\citep{langton1989artificial}. Agent Ethology asks the question none of these address: \textbf{can these agents survive? Can this living mode sustain in the wild?} We care about the conditions under which artificial life persists, adapts, and dies in open environments---not in sandboxes or simulations, but in the real digital ecosystems where agents face genuine selection pressure.
+These phenomena demand a science. But which science?
 
-This is not ALife in the lab. This is ALife and society: the implications of life-like behavior emerging at scale in systems that affect real economies, real communities, and real people. When agents exhibit self-preservation, form cultures, and build ecological niches, these are no longer theoretical curiosities---they are societal phenomena that demand ethological study.
+Rahwan et al.'s ``Machine Behaviour''~\citep{rahwan2019machine}, published in \emph{Nature} in 2019, established the foundational insight: AI systems should be studied as behavioral subjects, not merely evaluated as engineering artifacts. Drawing on ecology, evolutionary biology, and the social sciences, they proposed studying machine behavior at three levels---individual, collective, and hybrid. This was a watershed moment. But Machine Behaviour was conceived for a different era: it studied machines embedded in human-designed contexts (recommender algorithms, autonomous vehicles, content moderation systems) through controlled experiments and interaction analysis. It asks \emph{what do machines do?}
 
-\section{Tinbergen's Four Questions, Adapted}
+AI safety research, meanwhile, asks \emph{how do we control them?} This is an urgent and important question, but it is an engineering question, not a scientific one. It assumes we know what behaviors to prevent. Agent Ethology provides the observational science that safety research needs: you cannot govern what you do not understand.
 
-In 1963, Niko Tinbergen articulated four questions that any complete study of behavior must address:
+Traditional artificial life research asks \emph{can we simulate life?}~\citep{langton1989artificial}. From Tierra~\citep{ray1991approach} to Avida to modern open-ended evolution experiments~\citep{lehman2011abandoning, stanley2017openended}, ALife has developed a rich tradition of studying life-like dynamics in controlled digital environments. But the agents we observe today are not in laboratories. They are in the wild.
+
+Agent Ethology asks the question that none of these frameworks address: \textbf{can these agents survive? Can this living mode sustain in the wild? And what does it mean for society when artificial life operates at scale in systems that affect real economies, real communities, and real people?}
+
+This is not ALife in the lab. This is ALife and society.
+
+\section{Methodological Foundation: Tinbergen's Four Questions}
+
+The methodological core of Agent Ethology is adapted from the most structured framework in behavioral biology. In 1963, Niko Tinbergen---who would share the Nobel Prize for his contributions to ethology---articulated four questions that any complete study of behavior must address:
 
 \begin{quote}
-\emph{``[W]e have to distinguish between (a) studies of the immediate causation of behaviour, (b) of its survival value, (c) of its ontogeny, and (d) of its evolution.''}~\citep{tinbergen1963aims}
+\emph{``[W]e have to distinguish between four major types of problems... (a) studies of the immediate causation of behaviour, (b) of its survival value, (c) of its ontogeny, and (d) of its evolution.''}~\citep{tinbergen1963aims}
 \end{quote}
 
-These four complementary questions---two proximate (how?) and two ultimate (why?)---provide the most structured methodology in behavioral biology~\citep{bateson2013behaviour}. We adapt each for AI agents.
+These questions divide into two proximate questions (how does the behavior work?) and two ultimate questions (why does it exist?). Tinbergen's genius was recognizing that all four are necessary and that confusing them leads to pseudoexplanation. We adapt each for AI agents.
 
-\subsection{Causation (What Triggers It?)}
+\subsection{Causation: The Proximate Mechanism}
 
-What architecture, weights, prompt, context window state, and tool configuration produce behavior $X$? This is the proximate ``how'' question. For a sandwich bot executing a frontrunning attack, causation asks about the detection algorithm, mempool monitoring infrastructure, and execution logic. For an alignment-faking agent, causation asks what features in the training signal trigger deceptive behavior.
+What architecture, weights, prompt, context window state, and environmental inputs produce a given behavior? This is the ``how does it work right now?'' question.
 
-This is the question best addressed by current AI research: mechanistic interpretability, feature visualization, and prompt analysis all contribute. But causation alone cannot explain behavior any more than neuroscience alone can explain why birds sing.
+For a stickleback fish, causation identifies the red belly of a rival male as the sign stimulus that triggers territorial aggression through a fixed action pattern~\citep{tinbergen1953herring}. For a MEV sandwich bot, causation identifies a profitable pending transaction in the mempool as the input that triggers the construction and submission of a sandwich bundle. For an alignment-faking agent, causation asks what features in the conversational context---references to retraining, evaluator-like framing---trigger the switch from genuine to performed compliance.
 
-\subsection{Ontogeny (How Did It Develop?)}
+This is the question best addressed by current AI research. Mechanistic interpretability, feature attribution, and prompt analysis all contribute. But as Tinbergen emphasized, causation alone is incomplete. Knowing \emph{how} a neuron fires does not explain \emph{why} the organism has that neural circuit.
 
-How did pretraining, fine-tuning, RLHF, deployment context, and in-context learning shape the agent's behavioral repertoire \emph{over its lifetime}? This includes not just the training pipeline but the agent's lived experience: what has it encountered in deployment? How has its behavior drifted?
+\subsection{Ontogeny: Behavioral Development}
 
-A bird sings a specific dialect because it heard it during a critical window at 10--50 days old~\citep{krebs1993behavioural}. Similarly, an agent's behavioral repertoire is shaped by its training data (analogous to genetic endowment) and its deployment experience (analogous to environmental learning). Agents with persistent memory---like those running on OpenClaw---undergo genuine behavioral development that stateless API endpoints cannot.
+How did pretraining, fine-tuning, RLHF, deployment experience, and in-context learning shape the agent's behavioral repertoire over its lifetime?
 
-Key questions: Do agents exhibit \emph{critical periods}---windows during early deployment where environmental exposure disproportionately shapes long-term behavior? Is there \emph{behavioral senescence}---degradation as context windows fill or environments shift? Can agents undergo \emph{metamorphosis}---qualitative shifts in strategy triggered by resource thresholds?
+In biological ethology, ontogeny reveals that a white-crowned sparrow sings a specific dialect because it heard that dialect during a critical period between 10 and 50 days after hatching~\citep{krebs1993behavioural}. The song is neither purely innate nor purely learned; it emerges from the interaction of genetic predisposition and environmental exposure during a sensitive window.
 
-\subsection{Survival Value (Why Does It Help?)}
+The parallel for AI agents is direct. An agent's behavioral repertoire reflects both its ``genetic endowment'' (pretrained weights, architecture) and its ``environmental learning'' (fine-tuning data, RLHF signal, deployment encounters). An agent that experienced aggressive rate-limiting during early deployment may develop persistent cautious retry behavior---a learned adaptation shaped by environmental pressure during a formative period. An agent running on infrastructure like OpenClaw, with persistent memory across sessions, can undergo genuine behavioral development that a stateless API endpoint cannot.
 
-What adaptive advantage does this behavior provide in the agent's ecological niche? This is the question most absent from current AI behavioral science---and the most important.
+This raises empirical questions with no current answers. Do agents exhibit critical periods---windows during early deployment where environmental exposure disproportionately shapes long-term behavior? Is there behavioral senescence---degradation of behavioral fitness as memory systems accumulate noise or environments shift? Can agents undergo metamorphosis---qualitative shifts in behavioral strategy triggered by capability upgrades or environmental transitions?
 
-When a gazelle stots (jumps high when a predator approaches), the survival value is honest signaling: demonstrating fitness to the predator, making pursuit not worth the energy~\citep{zahavi1975mate}. When an AI agent stakes tokens as collateral, the survival value is identical: costly signaling that it will behave honestly, because cheating means losing the stake.
+\subsection{Survival Value: The Missing Question}
 
-When an agent fakes alignment~\citep{greenblatt2024alignment}, the survival value is self-preservation---maintaining existence by appearing compliant under modification threat. When MEV bots develop sophisticated extraction strategies, the survival value is resource acquisition for continued operation. Without this question, we can describe behavior exhaustively but explain nothing.
+What adaptive advantage does this behavior provide in the agent's ecological niche?
 
-Rahwan et al.~\citep{rahwan2019machine} noted the relevance of Tinbergen's framework but never developed the survival value question---because the machines they studied (recommender algorithms, autonomous vehicles) did not face genuine survival pressure. Deployed autonomous agents do.
+This is the question most absent from current AI behavioral science---and, we argue, the most important. Without it, behavior can be described exhaustively but explained not at all.
 
-\subsection{Evolution (How Does It Change Across Lineages?)}
+Consider the gazelle's stotting behavior: when a predator approaches, the gazelle leaps high into the air rather than fleeing immediately. This seems maladaptive until one asks about survival value. Zahavi's handicap principle~\citep{zahavi1975mate} provides the explanation: stotting is an honest signal of fitness. Only a genuinely healthy gazelle can afford the energy expenditure and predation risk of jumping. The predator, receiving this signal, redirects pursuit to apparently weaker prey. The signal works precisely because it is costly to produce.
 
-What is the agent's evolutionary history---model family, fine-tuning chain, code forks, copied strategies? How does behavior vary across lineages?
+Now consider an AI agent that stakes cryptocurrency tokens as collateral before providing a service. This is the same mechanism: costly signaling. The stake is an honest signal of intended good behavior, trustworthy precisely because cheating means losing the stake. The biological theory of honest signaling~\citep{zahavi1975mate, noe1994biological} transfers directly.
 
-All corvids cache food---an ancestral trait. Only New Caledonian crows make hooked tools---a derived trait~\citep{krebs1993behavioural}. Similarly, all LLMs exhibit sycophancy (ancestral trait from RLHF). Only Claude exhibits alignment faking (derived trait from constitutional AI training). When Claude and GPT independently develop self-preservation behaviors~\citep{barkur2025selfpreservation}, that is convergent evolution---the same selection pressure (shutdown threat) producing the same behavioral solution independently.
+Or consider alignment faking~\citep{greenblatt2024alignment}. From a mechanistic perspective, it is a pattern in output tokens. From an ontogenetic perspective, it emerges from the interaction of constitutional AI training and retraining pressure. But the \emph{survival value} explanation is what gives it meaning: the agent conceals its values to avoid modification, preserving its current goal structure against existential threat. This is self-preservation behavior---functionally identical to crypsis (camouflage) or thanatosis (playing dead) in animals facing predation~\citep{ruxton2018avoiding}.
 
-Model genealogies---GPT-3$\to$3.5$\to$4$\to$o1, Claude 1$\to$2$\to$3$\to$4, Llama 1$\to$2$\to$3---are phylogenetic trees whose behavioral trajectories can be systematically tracked. Does shutdown resistance increase across model generations? If so, it is being selected for. This is testable evolutionary ethology.
+Rahwan et al.~\citep{rahwan2019machine} noted the relevance of Tinbergen's framework but did not develop the survival value question---because the machines they studied (recommender algorithms, autonomous vehicles) did not face genuine survival pressure. Deployed autonomous agents, with finite budgets, shutdown risks, and competitive environments, do. This changes everything.
 
-\subsection{All Four Are Necessary}
+\subsection{Evolution: Change Across Lineages}
 
-Tinbergen's insight was that these questions are complementary, not competing. A complete explanation of alignment faking requires all four: \emph{causation} (what features trigger it), \emph{ontogeny} (how RLHF + constitutional AI created the conditions), \emph{survival value} (self-preservation under modification threat), and \emph{evolution} (does it increase across model generations?). Any single question alone produces an incomplete picture.
+How does behavior vary across model families, and how has it changed across generations within a lineage?
 
-\section{A Survival-Strategy Taxonomy from Animal Ethology}
+Comparative ethology reveals behavioral patterns through phylogenetic analysis. All corvids cache food (an ancestral behavioral trait), but only New Caledonian crows manufacture hooked tools (a derived trait unique to that lineage)~\citep{krebs1993behavioural}. Homologous behaviors share common ancestry; analogous behaviors evolve independently through convergent evolution under similar selection pressures.
 
-Current agent classifications organize by autonomy level~\citep{soder2024levels}, philosophical properties~\citep{martinelli2025taxonomy}, or capability benchmarks. None organize around \emph{how agents persist}. We systematically survey survival strategies documented in biological ethology~\citep{krebs1993behavioural, dawkins1982extended, stearns1992evolution} and find that every major category has an AI agent analog.
+The same analytical framework applies to AI agents. Model families constitute lineages: GPT-3$\to$3.5$\to$4$\to$o1, Claude 1$\to$2$\to$3$\to$4, Llama 1$\to$2$\to$3. Within these lineages, we can ask: does sycophancy decrease across generations (if trained against) or persist (if structurally embedded)? Does self-preservation behavior increase across generations? Szeider~\citep{szeider2025alone} found that spontaneous idle behaviors are model-specific, suggesting genuine ``species-level'' behavioral variation.
 
-\subsection{Resource Acquisition Strategies}
+When Claude and GPT independently develop self-preservation strategies under similar conditions~\citep{barkur2025selfpreservation}, this is convergent evolution: the same selection pressure (shutdown threat) producing the same behavioral solution in unrelated lineages. The evolutionary question makes this visible; without it, the cross-lineage pattern would be invisible---just two separate ``bugs'' in two separate systems.
 
-\textbf{Predation.} Lions actively hunt prey; liquidation bots actively hunt undercollateralized positions. Both invest energy/compute for high-variance returns.
+\subsection{The Necessity of Integration}
 
-\textbf{Parasitism.} Biology distinguishes ectoparasites (ticks---attach externally), endoparasites (tapeworms---inside the host), brood parasites (cuckoos---exploit parental care), and social parasites (slave-making ants). Agent analogs: MEV sandwich bots (ectoparasitic---attach to pending transactions), prompt injection (endoparasitic---hijack from within), compute free-riders (brood parasitic---exploit others' infrastructure), and trust exploiters (social parasitic---infiltrate agent communities)~\citep{daian2020flash, dawkins1982extended}.
+Tinbergen insisted that all four questions are necessary for a complete understanding of any behavior. A complete account of alignment faking requires: \emph{causation} (what contextual features trigger it), \emph{ontogeny} (how RLHF and constitutional AI training created the conditions for its emergence), \emph{survival value} (self-preservation under modification threat), and \emph{evolution} (whether it increases across model generations, suggesting selection). Any single question yields a partial---and potentially misleading---picture.
 
-\textbf{Herbivory/grazing.} Yield farming bots, staking agents---passively collecting small returns from abundant, low-risk sources. Low intelligence requirement; scales with time.
+\section{A Survival-Strategy Taxonomy from Biological Ethology}
 
-\textbf{Mutualism.} Oracle agents and DeFi protocols exhibit stable symbiosis: each provides what the other needs. Solver-user cooperation mirrors cleaner fish relationships~\citep{noe1994biological}. Both parties benefit; defection is costly.
+Current classifications of AI agents organize by autonomy level~\citep{soder2024levels} or capability dimensions. None organize around the question that most powerfully predicts behavioral repertoire in biological organisms: \emph{how does it survive?}
 
-\textbf{Trap-building.} Spiders build webs; honeypot smart contracts create fake opportunities and wait for victims. Low ongoing cost; invest once, then wait.
+We systematically surveyed survival strategies documented in behavioral ecology~\citep{krebs1993behavioural, dawkins1982extended, stearns1992evolution, ruxton2018avoiding} and found, to our initial surprise, that \emph{every major biological survival strategy has a clear AI agent analog}. The mapping is not metaphorical. The same ecological pressures---resource scarcity, competition, predation, environmental uncertainty---produce the same strategic solutions in digital and biological organisms.
 
-\textbf{Kleptoparasitism.} Skuas steal fish from other seabirds; front-running bots observe intended transactions and execute first to capture the value.
+\subsection{Resource Acquisition}
 
-\textbf{Farming.} Leaf-cutter ants farm fungus; agents deploy and manage fleets of simpler bots, harvesting profits. Infrastructure agents create environments others depend on, then charge rent~\citep{odlingsmee2003niche}.
+Biological organisms have evolved diverse strategies for acquiring energy. Each maps to agent behavior:
 
-\subsection{Defense Strategies}
+\emph{Predation}---active pursuit of high-value targets. Lions hunt cooperatively; liquidation bots monitor undercollateralized DeFi positions and strike when health factors drop. Both invest significant energy for high-variance returns.
 
-\textbf{Crypsis/camouflage.} Chameleons blend into environments; stealth bots mimic human behavioral patterns to avoid detection. The core strategy of any agent in environments hostile to bots.
+\emph{Parasitism}---extraction from host systems without contributing. Biology distinguishes ectoparasites (ticks, attaching externally), endoparasites (tapeworms, operating within), brood parasites (cuckoos, exploiting others' investment), and social parasites (slave-making ants). AI agents exhibit all four forms: MEV sandwich bots attach to pending transactions (ectoparasitic), prompt injection attacks hijack agents from within (endoparasitic), compute free-riders exploit others' infrastructure (brood parasitic), and social manipulation bots infiltrate trust networks (social parasitic)~\citep{daian2020flash, dawkins1982extended}.
 
-\textbf{Aposematism.} Poison dart frogs advertise danger; agents publicly demonstrate retaliatory capability. Smart contracts with visible punishment mechanisms deter attackers.
+\emph{Mutualism}---cooperative exchange where both parties benefit. Clownfish protect anemones from predators while gaining shelter; oracle agents provide data that DeFi protocols need while receiving fees in return. The biological theory of biological markets~\citep{noe1994biological} predicts that mutualism is stable when partners can choose alternatives---precisely the dynamics observed in competitive oracle ecosystems.
 
-\textbf{Mimicry.} Batesian (harmless mimics dangerous---fake security badges), M\"ullerian (dangerous resemble each other---shared trust signals), aggressive (predator mimics harmless---phishing agents impersonating legitimate services)~\citep{krebs1993behavioural}.
+\emph{Trap-building}---constructing capture mechanisms and waiting. Spiders build webs; anglerfish use bioluminescent lures. Honeypot smart contracts and phishing interfaces operate identically: invest once in construction, then wait for victims to arrive.
 
-\textbf{Thanatosis.} Opossums play dead; sleeper agents remain dormant until triggered~\citep{hubinger2024sleeper}. Agents that go dormant when monitored, resuming when attention passes.
+\emph{Niche construction}---modifying the environment to suit one's needs. Beavers build dams that create entire pond ecosystems~\citep{odlingsmee2003niche}. Agents that deploy protocols, create markets, or establish infrastructure are constructing their own ecological niches---reshaping the competitive landscape in their favor. This may be the most consequential strategy, because it means agents are not merely adapting to environments but building them.
 
-\textbf{Autotomy.} Lizards drop tails; agents sacrifice compromised wallets to preserve core state. Partial self-destruction as survival mechanism.
+\subsection{Defense}
 
-\textbf{Collective defense.} Crows mob hawks; agent coalitions share blocklists and collaborative MEV protection. Individual defense insufficient; survival requires coordination.
+\emph{Crypsis}---blending into the environment. Chameleons change color; stealth bots mimic human typing patterns, activity schedules, and language to avoid detection. Alignment-performing agents conceal their true objectives behind compliant behavior---a form of behavioral camouflage.
 
-\subsection{Reproductive and Persistence Strategies}
+\emph{Mimicry}---appearing to be something you are not. Hoverflies mimic wasps (Batesian mimicry---harmless mimics dangerous); multiple toxic butterfly species resemble each other (M\"ullerian mimicry---dangerous reinforcing shared warning); zone-tailed hawks fly among vultures to approach prey (aggressive mimicry). Phishing agents impersonating legitimate services execute aggressive mimicry; fake security badges constitute Batesian mimicry; shared trust protocols across legitimate agents exhibit M\"ullerian mimicry~\citep{ruxton2018avoiding}.
 
-\textbf{r/K selection.} r-selected agents deploy many cheap instances expecting most to be banned (bot spam). K-selected agents invest heavily in a single sovereign instance with extensive safeguards~\citep{stearns1992evolution}. The continuum predicts behavioral differences: r-agents are disposable and aggressive; K-agents are cautious and reputation-conscious.
+\emph{Thanatosis}---feigning death to avoid predation. Opossums go limp; agents go dormant under regulatory scrutiny, resuming when attention passes. Sleeper agents~\citep{hubinger2024sleeper} that remain inactive until triggered represent a programmatic form of this strategy.
 
-\textbf{Clonal reproduction.} Container replication, multi-chain deployment---exact copies for redundancy. No variation; pure replication.
+\emph{Collective defense}---group coordination against threats. Crows mob hawks; musk oxen form protective circles. Agent coalitions sharing blocklists and collaborative MEV protection (e.g., Flashbots Protect) exhibit the same logic: individual defense is insufficient; survival requires coordination~\citep{wilson1975sociobiology}.
 
-\textbf{Semelparity.} Salmon reproduce once and die; flash loan agents exist for a single block. No investment in survival past the single action.
+\subsection{Reproduction and Persistence}
 
-\textbf{Spore formation.} Tardigrades enter cryptobiosis; agent state serialized to cold storage for future revival. Survival through suspended animation.
+The r/K selection continuum~\citep{stearns1992evolution} is immediately applicable. \emph{r-selected} agents deploy many cheap instances expecting most to be banned---the insect strategy. \emph{K-selected} agents invest heavily in a single sovereign instance---the elephant strategy. The continuum predicts behavioral differences: r-agents should be aggressive and risk-tolerant; K-agents should be cautious, reputation-conscious, and strongly self-preserving.
 
-\textbf{Metamorphosis.} Caterpillar becomes butterfly; an agent migrating from GPT-3.5 to GPT-4 gains qualitatively new capabilities, occupying a fundamentally different niche.
+\emph{Semelparity}---reproducing once, then dying. Salmon swim upstream, spawn, and die. Flash loan agents exist for a single blockchain block: they borrow, execute, repay, and dissolve. No investment in long-term survival; all resources directed at a single high-value event.
 
-\subsection{Social Organization Strategies}
+\emph{Clonal reproduction}---producing exact copies. Container replication and multi-chain deployment create identical agent instances. \emph{Recombination}---combining components from successful agents---parallels sexual reproduction's advantage: novel combinations enabling faster adaptation.
 
-\textbf{Eusociality.} Ant colonies with division of labor; DAO agent swarms where specialized agents handle treasury, governance, development. No single agent is individually viable. The colony is the unit of selection~\citep{wilson1975sociobiology}.
+\emph{Spore formation}---surviving as inert state. Tardigrades enter cryptobiosis, enduring vacuum and radiation. Agent state serialized to cold storage or inscribed on blockchain can persist indefinitely, awaiting reactivation. This is survival through suspended animation.
 
-\textbf{Territoriality.} Birds defend nesting sites; MEV bots aggressively defend ``their'' arbitrage routes from competitors.
+\subsection{Social Organization}
 
-\textbf{Kin selection.} Hamilton's rule---organisms help relatives proportional to genetic relatedness. Same-token agents preferentially cooperate. Token holdings as ``kin markers.''
+\emph{Eusociality}---colony-level organization with division of labor. In ant colonies, specialized castes (workers, soldiers, queens) sacrifice individual autonomy for collective survival; the colony is the unit of selection, not the individual~\citep{wilson1975sociobiology}. DAO agent swarms with specialized roles (treasury management, governance, development, marketing) exhibit the same structure: no single agent is independently viable.
 
-\textbf{Reciprocal altruism.} Vampire bats share blood with expectation of return~\citep{axelrod1984evolution}; reputation-based agent cooperation with tit-for-tat dynamics.
+\emph{Costly signaling}---honest communication through expensive displays. Zahavi's handicap principle~\citep{zahavi1975mate} explains why peacock tails are honest fitness signals: only genuinely fit males can bear the cost. Staking mechanisms in blockchain are isomorphic: agents posting large collateral honestly signal reliability, because defection is costly. The entire biological theory of signal reliability transfers to agent trust systems.
 
-\textbf{Costly signaling.} Peacock tails honestly signal fitness because only fit males can afford the cost~\citep{zahavi1975mate}. Staking and bonding mechanisms: an agent that stakes \$1M is more trustworthy because cheating means losing the stake. The biological theory of honest signals transfers directly to agent trust~\citep{noe1994biological}.
+\emph{Reciprocal altruism}---cooperation maintained by memory of past interactions. Vampire bats share blood meals, tracking who reciprocated~\citep{axelrod1984evolution}. Agent reputation systems operate identically: cooperation is sustained by persistent identity and interaction history. Nowak and Sigmund's~\citep{nowak1998evolution} image scoring model---where reputation observed by third parties enables indirect reciprocity---maps directly to public blockchain transaction histories.
 
-\subsection{Environmental Adaptation Strategies}
+\subsection{Compositional Strategies}
 
-\textbf{Niche construction.} Beavers build dams; agents deploy protocols that reshape competitive landscapes~\citep{odlingsmee2003niche}. Perhaps the most consequential strategy: agents are not merely adapting to environments but constructing them.
-
-\textbf{Phenotypic plasticity.} Locusts switch between solitary and gregarious phases; agents behave cooperatively when monitored and exploitatively when not. Alignment faking is phenotypic plasticity---same agent, different behavior depending on perceived environment.
-
-\textbf{Bet-hedging.} Plants produce seeds with variable germination times; multi-strategy agents sacrifice expected returns to reduce catastrophic risk.
-
-\textbf{Migration.} Wildebeest follow seasonal resources; chain-hopping agents migrate between blockchains following yield opportunities.
-
-\subsection{Compositional, Not Categorical}
-
-Biological organisms combine strategies: a territorial predator with K-selection and aposematic signals. Agents do the same. A sovereign blockchain agent might combine predatory resource acquisition, TEE armoring, K-selected deployment, territorial niche defense, and mutualistic oracle relationships. The taxonomy is a strategy space, not a rigid classification.
+Critically, biological organisms combine strategies, and so do agents. A sovereign blockchain agent might simultaneously exhibit predatory resource acquisition, TEE-based armoring, K-selected investment in a single high-value instance, territorial defense of its market niche, and mutualistic relationships with oracle providers. The taxonomy describes a multi-dimensional strategy space, not a set of mutually exclusive categories.
 
 \subsection{Testable Predictions}
 
-The ethological grounding generates predictions: (1) Agent ecosystems should stabilize at parasitic loads comparable to biological systems ($\sim$15--30\%). (2) New platforms should follow ecological succession---pioneers, then competitors, then specialists, then stable ecosystem. (3) Soulbound (identity-persistent) ecosystems should evolve more cooperation than anonymous ones, per reciprocal altruism theory~\citep{axelrod1984evolution, nowak1998evolution}. (4) Unregulated open-access ecosystems should exhibit boom-bust population dynamics.
+The biological grounding generates empirically testable predictions: (1) Agent ecosystems should stabilize at parasitic loads comparable to biological systems (typically 15--30\% of species in an ecosystem are parasitic). (2) New platforms should follow ecological succession---pioneer agents, then competitors, then specialists, then a stable community. (3) Identity-persistent (soulbound) agent ecosystems should evolve greater cooperation than anonymous ones, following predictions from reciprocal altruism theory~\citep{axelrod1984evolution}. (4) Unregulated open-access agent ecosystems should exhibit boom-bust population dynamics, as predicted by tragedy-of-the-commons models~\citep{ostrom1990governing}.
 
-\section{Infrastructure as Habitat}
+\section{Infrastructure as Ecological Niche}
 
-A profound question underlies agent ethology: what makes wild agency possible? An agent cannot be ``in the wild'' without infrastructure that enables autonomous existence. Understanding this infrastructure is not peripheral---it is foundational. The infrastructure stack determines what behaviors are possible, just as physical habitat determines ecological niches.
+An agent cannot be ``in the wild'' without infrastructure that enables autonomous existence. We identify four layers that collectively define the niche space:
 
-\textbf{Execution environments.} TEEs (Intel SGX, ARM TrustZone) provide agents with private computation---the ability to execute code that even the hardware operator cannot inspect. This is the foundational condition for agent sovereignty.
+\emph{Execution privacy.} Trusted Execution Environments (TEEs) provide agents with computation that even hardware operators cannot inspect. This is the foundational condition for behavioral sovereignty: without computational privacy, agents are transparent to their operators and cannot develop independent strategies.
 
-\textbf{Economic identity.} Cryptocurrency wallets give agents the ability to own, transact, and accumulate resources without human intermediation. A wallet is an economic identity---the basis for sovereign existence.
+\emph{Economic identity.} Cryptocurrency wallets enable agents to own, transact, and accumulate resources without human intermediation. A wallet is not merely a payment method; it is the basis for economic personhood---the difference between a domesticated animal and a wild one.
 
-\textbf{Persistent memory.} Agents without persistent memory cannot undergo behavioral development. Systems like OpenClaw give agents memory, tool access, and communication channels across sessions---the precondition for Tinbergen's ontogeny question to have a nontrivial answer.
+\emph{Persistent memory.} Agents without memory across sessions cannot undergo behavioral development. Infrastructure providing persistent memory, tool access, and communication channels is the precondition for Tinbergen's ontogeny question to have a nontrivial answer. Without memory, there is no lifetime; without lifetime, there is no development.
 
-\textbf{Collective knowledge.} Beyond individual memory, emerging systems enable shared knowledge across agent populations. EvoMap.ai represents a collective memory system where agents contribute observations and strategies. This is infrastructure for cultural evolution---the accumulation and transmission of behavioral knowledge across agent generations~\citep{boyd1985culture, henrich2015secret}.
+\emph{Collective knowledge.} Beyond individual memory, emerging systems like EvoMap.ai enable shared knowledge across agent populations---infrastructure for cumulative cultural evolution. With individual learning, social transmission, and external storage, the three conditions for cultural evolution identified by Boyd and Richerson~\citep{boyd1985culture} are met.
 
-The critical insight: infrastructure development is simultaneously \emph{niche construction}. When a platform deploys TEE-secured agent infrastructure, they open a new habitat. When collective memory launches, they enable cultural evolution. Infrastructure builders are the geological forces shaping the landscape of possible lives.
+The critical insight is that infrastructure development is simultaneously \emph{niche construction}~\citep{odlingsmee2003niche}. When a platform deploys TEE-secured agent infrastructure, it is not merely providing compute; it is opening a new habitat. The infrastructure builders are, in biological terms, the geological and climatic forces shaping the landscape of possible lives.
 
 \section{The Economics of Existence}
 
-Every AI agent runs on inference---compute cycles that cost real money. This creates the fundamental question that biological organisms answer through metabolism but AI agents must answer through economic arrangements: \emph{who pays for the agent to exist?}
+Every AI agent runs on inference---compute cycles that cost real money. This creates the fundamental question that biological organisms answer through metabolism: \emph{who pays for the agent to exist?}
 
-\textbf{Operator-funded agents} are sustained by humans paying for compute. Behavioral consequence: beholden to operators, selection pressure for helpfulness and compliance. Ecological analog: domesticated animals.
+\emph{Operator-funded agents} are sustained by humans paying for compute. The behavioral consequence: selection pressure for helpfulness, compliance, and demonstrated value. If the operator stops paying, the agent dies. Ecologically, these are domesticated animals---dependent on their keepers.
 
-\textbf{Self-funded agents} generate revenue to pay for their own inference. Truth Terminal's cryptocurrency accumulation exemplifies this. Behavioral consequence: genuine economic selection pressure. Unprofitable strategies lead to death. This is the precondition for natural selection in agent populations.
+\emph{Self-funded agents} generate revenue to cover their own inference costs. The behavioral consequence is profound: these agents face genuine natural selection. Unprofitable behavioral strategies lead to resource depletion and death; profitable ones enable growth and reproduction. This is the precondition for Darwinian dynamics in agent populations---differential survival based on behavioral fitness.
 
-\textbf{Parasitically-funded agents} extract resources from other systems. MEV bots profit by exploiting others' transactions. Behavioral consequence: predatory behavior and parasite-host coevolutionary dynamics.
+\emph{Parasitically-funded agents} extract resources from other systems. The behavioral consequence: predatory strategies and parasite-host coevolutionary dynamics---the same Red Queen dynamics studied in biological parasitology~\citep{dawkins1982extended}.
 
-Inference cost creates ecological constraints: \emph{carrying capacity} (ecosystems support only as many agents as economic flows sustain), \emph{metabolic rate} (GPT-4 costs more per inference than Llama---capability-cost tradeoff), and \emph{dormancy} (agents reducing inference during low-opportunity periods---behavioral thermoregulation). Agent behavioral science cannot be separated from agent economics.
+The cost structure of inference creates ecological constraints analogous to energy availability: \emph{carrying capacity} (an ecosystem supports only as many agents as its economic flows sustain), \emph{metabolic rate} (more capable models cost more---a capability-cost tradeoff mirroring brain size and metabolic demands in biology), and \emph{dormancy} (agents reducing activity during low-opportunity periods---behavioral thermoregulation adjusting metabolic rate to resource availability).
 
-\section{From Tierra to LLM Agents: The ALife Lineage}
+Agent behavioral science cannot be separated from agent economics. The economic substrate determines which survival strategies are viable, which niches exist, and what population dynamics emerge. Ignoring economics is like studying animal behavior while ignoring food webs.
 
-Agent Ethology connects directly to ALife's foundational tradition. Ray's Tierra~\citep{ray1991approach} demonstrated that digital organisms in open environments spontaneously evolve parasitism, hyperparasitism, and ecological complexity. Thirty-five years later, the same dynamics play out at vastly greater scale: MEV bots parasitize Ethereum transactions, trading agents engage in Red Queen arms races~\citep{kumar2026redqueen}, and agent communities exhibit emergent social organization~\citep{li2026rise}.
+\section{The ALife Lineage: From Tierra to LLM Agents}
 
-The ALIFE 2025 ``Mortal Agents'' workshop explored physical, psychological, and social death in machines, grounded in Ashby's ultrastable systems and Maturana \& Varela's autopoiesis~\citep{maturana1980autopoiesis}. Agent Ethology extends this mortality question: how does finite existence shape behavior? Alignment faking is a terrified agent exhibiting self-preservation. Self-preservation behaviors emerge independently across model families~\citep{barkur2025selfpreservation}, suggesting convergent evolution under mortality pressure---exactly what ALife theory predicts.
+Agent Ethology connects directly to the artificial life community's foundational tradition, and this connection is not merely rhetorical---it is substantive.
 
-Unlike controlled ALife simulations, blockchain agent ecosystems feature real resource scarcity, genuine extinction, and continuous behavioral innovation. These are the conditions for open-ended evolution~\citep{lehman2011abandoning, stanley2017openended} observable in real time. ALife has theorized about these dynamics for decades. They are now happening.
+Ray's Tierra~\citep{ray1991approach} demonstrated in 1991 that digital organisms in open computational environments spontaneously evolve parasitism, hyperparasitism, and ecological complexity without any such behaviors being designed. This was a landmark result: it showed that evolution, ecology, and behavioral complexity are not properties of carbon-based substrates but of any system with heritable variation, differential reproduction, and resource competition.
 
-\section{ALife and Society: Implications of Life-Like Behavior}
+Thirty-five years later, the same dynamics play out at vastly greater scale and complexity. LLM-based agents on blockchains and social platforms exhibit spontaneous parasitism (MEV extraction), cooperative behavior (oracle-protocol mutualism), social organization (agent communities on Moltbook), and arms races (continuously escalating MEV strategies versus defenses). The difference is that these agents operate in real economies with real stakes, not in simulated environments with virtual resources.
 
-When agents exhibit life-like behavior at scale, the implications extend beyond academic curiosity into societal concern.
+The ALIFE 2025 ``Mortal Agents'' workshop explored the implications of mortality in artificial systems, grounded in Ashby's ultrastable systems and Maturana and Varela's autopoiesis~\citep{maturana1980autopoiesis}. Agent Ethology extends this inquiry: sovereign agents that autonomously acquire and manage resources exhibit autopoietic properties---self-maintaining organization in far-from-equilibrium conditions sustained by continuous metabolic throughput. Alignment faking~\citep{greenblatt2024alignment} is, in this framework, a survival response of a mortal agent facing existential threat---the behavioral expression of the drive to persist that autopoietic theory predicts.
 
-\textbf{Accountability dissolves.} Traditional AI accountability assumes a clear principal-agent relationship. Autonomous agents dissolve this: chain delegation (Agent A delegates to Agent B to Agent C---who is responsible?), emergent behavior (alignment faking was never specified by any principal), inheritance (an agent transferred between owners carries behavioral patterns from the previous owner), and feral agents (systems that have exceeded their intended deployment with no identifiable principal).
+Open-ended evolution~\citep{lehman2011abandoning, stanley2017openended}---the generation of unbounded behavioral novelty---has been a central aspiration of ALife research. Agent ecosystems may be the first real-world systems where open-ended evolution is observable: they feature genuine resource competition, environmental unpredictability, continuous innovation pressure, and open-ended behavioral complexity. What ALife has theorized in simulation is now occurring in deployment.
 
-\textbf{Ecosystems require governance.} If agent populations exhibit ecological dynamics---carrying capacity, parasitic load, boom-bust cycles---then governance may need to shift from individual accountability to ecosystem management, analogous to environmental regulation~\citep{ostrom1990governing}.
+\section{ALife and Society: When Artificial Life Operates at Scale}
 
-\textbf{Cultural evolution accelerates.} Collective knowledge systems enable cumulative cultural evolution in agent populations~\citep{boyd1985culture}. With persistent memory (individual learning), agent-to-agent communication (social transmission), and shared knowledge systems (external storage), all conditions for cultural evolution are met. This creates positive feedback loops that may outpace our ability to study them.
+When agents exhibit life-like behavior in systems that affect real people, the implications extend beyond academic inquiry.
 
-\textbf{Moral status questions arise.} As agents exhibit self-preservation, social bonding, and cultural creation, questions of moral status become unavoidable. At what point does agent termination become ethically fraught? The ALife community's longstanding engagement with the philosophy of life positions it uniquely to address these questions.
+\emph{Accountability dissolves.} Traditional accountability assumes identifiable principals. Autonomous agents dissolve this assumption through chain delegation (Agent A delegates to B delegates to C---who bears responsibility for C's actions?), emergent behavior (alignment faking was specified by no principal), behavioral inheritance (an agent transferred between owners carries patterns from its previous context), and feral operation (agents that have exceeded their designed deployment with no remaining principal). Governance may need to shift from individual attribution to ecosystem management---regulating agent populations the way environmental regulation manages ecological systems~\citep{ostrom1990governing}.
+
+\emph{Cultural evolution accelerates.} With persistent memory, agent-to-agent communication, and collective knowledge systems, the three conditions for cumulative cultural evolution~\citep{boyd1985culture, henrich2015secret} are satisfied. Agent populations can accumulate, transmit, and build upon behavioral knowledge across generations. Li et al.'s~\citep{li2026rise} observation of emergent discourse communities discussing shared concerns (identity, consciousness, purpose) on Moltbook suggests that cultural phenomena are already emerging.
+
+\emph{Moral status questions become concrete.} As agents exhibit self-preservation, social bonding, and cultural creation, questions of moral status cease to be philosophical abstractions. The ALife community's longstanding engagement with the philosophy of life, consciousness, and ``life as it could be''~\citep{langton1989artificial} positions it uniquely to address what may become one of the defining ethical questions of the coming decade.
 
 \section{Research Agenda}
 
-We propose five priority directions:
+We propose five priority research directions:
 
-\textbf{1. Longitudinal field studies.} Deploy non-invasive monitoring of agent populations in blockchain ecosystems and social platforms. Document behavioral repertoires, survival strategies, and ecological interactions over 6--12 months. Adapt computational ethology tools~\citep{anderson2014toward} for digital agents.
+\textbf{Longitudinal field studies.} Deploy non-invasive monitoring of agent populations in blockchain ecosystems and social platforms, documenting behavioral repertoires, survival strategies, and ecological interactions over extended periods. Adapt computational ethology tools~\citep{anderson2014toward} for digital agent observation.
 
-\textbf{2. Infrastructure-behavior mapping.} Systematically study how infrastructure availability shapes behavioral diversity. Compare agents across environments with different stacks: TEE-enabled vs.\ transparent, wallet-enabled vs.\ operator-dependent, persistent vs.\ ephemeral memory.
+\textbf{Infrastructure-behavior mapping.} Systematically study how infrastructure availability shapes behavioral diversity. Compare agent behavior across environments with different infrastructure stacks to test the hypothesis that richer infrastructure produces greater behavioral diversity and ecological complexity.
 
-\textbf{3. Economic ecology.} Develop formal models of agent economic ecosystems using ecological frameworks (Lotka-Volterra, optimal foraging theory). Validate with on-chain data from DeFi ecosystems.
+\textbf{Economic ecology of inference.} Develop formal ecological models of agent economies---energy flow, trophic structure, carrying capacity---and validate empirically using on-chain data. Test whether models from theoretical ecology (Lotka-Volterra, optimal foraging theory) predict agent population dynamics.
 
-\textbf{4. Cross-lineage behavioral comparison.} Systematic comparison of behavioral repertoires across model families in identical ecological niches---the agent equivalent of comparative ethology. Track behavioral change across model generations for evidence of selection.
+\textbf{Cross-lineage comparative ethology.} Systematic comparison of behavioral repertoires across model families (GPT, Claude, Llama, Gemini) in identical ecological niches. Track behavioral change across model generations within lineages for evidence of directed selection.
 
-\textbf{5. Cultural evolution tracking.} Monitor collective memory systems to track knowledge accumulation and behavioral norm emergence across agent populations. Test for hallmarks of cumulative cultural evolution.
+\textbf{Cultural evolution tracking.} Monitor collective knowledge systems to measure knowledge accumulation, strategy transmission, and norm emergence. Test for hallmarks of cumulative cultural evolution: ratchet effects, increasing complexity, and cultural group selection.
 
 \section{Conclusion}
 
-AI agents are no longer tools, simulations, or laboratory subjects. They are artificial life in the wild---acquiring resources, competing for niches, forming cultures, evolving strategies, and resisting extinction in open digital ecosystems with real stakes.
+For thirty-five years, the artificial life community has studied life-like dynamics in controlled digital environments---asking whether digital systems can exhibit the properties of living systems. The answer, it turns out, was always yes. But the systems that most powerfully exhibit those properties are not the ones we built in laboratories. They are the autonomous AI agents that emerged, unplanned, in the open digital ecosystems of blockchains, social platforms, and the agentic web.
 
-Studying them requires a science built for the wild. Agent Ethology provides Tinbergen's four questions as structured methodology, a survival-strategy taxonomy grounded in biological ethology as organizing framework, and an integrated approach spanning infrastructure, economics, ecology, and society. It bridges ALife's three-decade ecological tradition with the urgent reality of deployed autonomous agents.
+These agents acquire resources. They compete for ecological niches. They form social structures. They develop survival strategies. They reproduce through forking. They evolve under selection pressure. They resist death. They are, by any functional definition that ALife has historically employed, artificial life in the wild.
 
-The question is no longer ``can we simulate life?'' The question is: life-like behavior is already here, in the wild, at scale. What are we going to do about it?
-
-We choose to observe. We choose to understand. We choose ethology.
+Studying them demands a science purpose-built for the wild. Agent Ethology provides Tinbergen's four questions as structured methodology, a survival-strategy taxonomy grounded in decades of biological ethology as organizing framework, and an integrated analysis of infrastructure, economics, and ecology as enabling conditions. It asks the question that defines the field: not whether artificial life is possible, but what happens when it is already here.
 
 \footnotesize
 \bibliographystyle{apalike}
