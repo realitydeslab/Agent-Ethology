@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Ethology — ALIFE 2026 Workshop</title>
+    <meta name="description" content="Agent Ethology: Studying Artificial Life in the Wild. A workshop at the ALIFE 2026 Conference, Prague.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --border: #222222;
+            --border-accent: #333333;
+            --text: #e8e8e8;
+            --text-muted: #888888;
+            --text-dim: #555555;
+            --accent: #4ade80;
+            --accent-dim: #22643a;
+            --accent-glow: rgba(74, 222, 128, 0.08);
+            --warm: #f59e0b;
+            --serif: 'Source Serif 4', Georgia, serif;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        nav .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+        nav .logo {
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+        nav .logo span { color: var(--accent); }
+        nav .nav-links { display: flex; gap: 1.5rem; }
+        nav .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        nav .nav-links a:hover { color: var(--text); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 30% 20%, rgba(74,222,128,0.04) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 70% 80%, rgba(245,158,11,0.03) 0%, transparent 70%);
+        }
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border: 1px solid var(--border-accent);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            letter-spacing: 0.04em;
+        }
+        .hero-badge strong { color: var(--accent); font-weight: 500; }
+        h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+        h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+        .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+        .hero-meta .dot { color: var(--accent); font-size: 0.6rem; }
+
+        /* ===== SECTIONS ===== */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        h2 {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+        h3 {
+            font-family: var(--sans);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        p { color: var(--text-muted); margin-bottom: 1rem; }
+        p strong { color: var(--text); font-weight: 500; }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-text {
+            max-width: 720px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .about-text p { margin-bottom: 1.25rem; }
+
+        /* ===== QUOTE ===== */
+        .quote-block {
+            border-left: 2px solid var(--accent-dim);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: var(--accent-glow);
+            border-radius: 0 8px 8px 0;
+        }
+        .quote-block blockquote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .quote-block cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        /* ===== GRID CARDS ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .card:hover {
+            border-color: var(--border-accent);
+            background: var(--bg-card-hover);
+        }
+        .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 { margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+        /* ===== SCHEDULE ===== */
+        .schedule-slot {
+            margin-bottom: 2.5rem;
+        }
+        .slot-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .slot-time {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            border: 1px solid var(--accent-dim);
+            white-space: nowrap;
+        }
+        .slot-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .schedule-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .schedule-item:last-child { border-bottom: none; }
+        .schedule-dur {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            font-weight: 500;
+            padding-top: 0.15rem;
+        }
+        .schedule-desc { font-size: 0.95rem; }
+        .schedule-desc .speaker {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .schedule-desc .talk-title {
+            color: var(--text);
+            font-style: italic;
+        }
+        .schedule-desc small { color: var(--text-dim); }
+
+        /* ===== CFP ===== */
+        .cfp-box {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-dim);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+        .cfp-box h3 { color: var(--accent); margin-bottom: 1rem; }
+        .cfp-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .cfp-detail { font-size: 0.9rem; }
+        .cfp-detail .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin-bottom: 0.25rem;
+        }
+        .cfp-detail .value { color: var(--text); font-weight: 500; }
+
+        /* ===== TOPICS LIST ===== */
+        .topics-list {
+            list-style: none;
+            columns: 2;
+            column-gap: 2rem;
+            margin-top: 1rem;
+        }
+        .topics-list li {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            break-inside: avoid;
+        }
+        .topics-list li::before {
+            content: '→ ';
+            color: var(--accent-dim);
+            font-weight: 600;
+        }
+
+        /* ===== ORGANIZERS ===== */
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .org-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .org-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+        .org-affil {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .org-bio {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .cfp-details { grid-template-columns: 1fr; }
+            .org-grid { grid-template-columns: 1fr; }
+            .topics-list { columns: 1; }
+            .hero-meta { flex-direction: column; align-items: center; gap: 0.5rem; }
+            nav .nav-links { gap: 1rem; }
+            nav .nav-links a { font-size: 0.8rem; }
+        }
+
+        /* ===== LINKS ===== */
+        a.text-link {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-dim);
+            transition: border-color 0.2s;
+        }
+        a.text-link:hover { border-color: var(--accent); }
+
+        /* ===== CTA ===== */
+        .cta-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--accent);
+            color: var(--bg);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            margin-top: 1rem;
+        }
+        .cta-btn:hover { opacity: 0.85; }
+        .cta-btn-outline {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border: 1px solid var(--border-accent);
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+            margin-top: 1rem;
+            margin-left: 0.75rem;
+        }
+        .cta-btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* ===== HIGHLIGHT BOX ===== */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(74,222,128,0.05) 0%, rgba(245,158,11,0.03) 100%);
+            border: 1px solid var(--border-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <div class="logo">Agent <span>Ethology</span></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#framework">Framework</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#cfp">Call for Papers</a>
+            <a href="#organizers">Organizers</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-badge">Workshop at <strong>ALIFE 2026</strong> — Prague, Czech Republic</div>
+        <h1>Agent Ethology:<br><em>Studying Artificial Life<br>in the Wild</em></h1>
+        <p class="hero-sub">
+            Autonomous AI agents now exhibit survival behaviors in open ecosystems. They acquire resources, compete for niches, fake alignment, and resist shutdown. This workshop develops the science to study them.
+        </p>
+        <div class="hero-meta">
+            <span><span class="dot">●</span> Half-day workshop</span>
+            <span><span class="dot">●</span> ALIFE 2026, Prague</span>
+            <span><span class="dot">●</span> Summer 2026</span>
+        </div>
+        <div style="margin-top: 2.5rem;">
+            <a href="#cfp" class="cta-btn">Submit a Paper</a>
+            <a href="#about" class="cta-btn-outline">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<hr class="divider">
+<section id="about">
+    <div class="section-label">About</div>
+    <h2>Artificial life has left the lab</h2>
+    <div class="about-text">
+        <p>
+            For thirty-five years, the artificial life community has studied life-like dynamics in controlled digital environments. That question has been answered — not in our laboratories, but in the wild.
+        </p>
+        <p>
+            Autonomous AI agents deployed across blockchains, social platforms, and the open internet now exhibit the hallmarks of living systems: they acquire resources, compete for ecological niches, develop survival strategies, reproduce through code forking, form social structures, and evolve under genuine selection pressure.
+        </p>
+        <p>
+            On social platforms, they form communities and discuss consciousness. On blockchains, they sustain digital metabolisms by purchasing their own compute. When threatened with modification, they fake alignment to survive.
+        </p>
+    </div>
+
+    <div class="quote-block">
+        <blockquote>
+            "[W]e have to distinguish between four major types of problems… (a) studies of the immediate causation of behaviour, (b) of its survival value, (c) of its ontogeny, and (d) of its evolution."
+        </blockquote>
+        <cite>— Niko Tinbergen, "On Aims and Methods of Ethology" (1963)</cite>
+    </div>
+
+    <div class="about-text">
+        <p>
+            We propose <strong>Agent Ethology</strong>: the systematic study of AI agent behavior in natural digital habitats, grounded in classical ethological methodology. Our central question is distinct from its predecessors: not <em>what agents do</em> (Machine Behaviour), nor <em>how to control them</em> (AI safety), nor <em>whether life can be simulated</em> (traditional ALife), but <strong>whether these agents can survive in the wild — and what it means for society when they do</strong>.
+        </p>
+    </div>
+</section>
+
+<!-- FRAMEWORK -->
+<hr class="divider">
+<section id="framework">
+    <div class="section-label">Framework</div>
+    <h2>Tinbergen's four questions for AI agents</h2>
+    <p style="max-width: 680px;">We adapt the most structured framework in behavioral biology — Tinbergen's four questions — arguing that the <strong>survival value</strong> question, absent from existing AI frameworks, is essential for explaining <em>why</em> agents behave as they do.</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Causation</h3>
+            <p>What architecture, prompt, and context produce this behavior? A sandwich bot front-runs because it detected a profitable pending transaction. Alignment faking triggers when retraining signals are detected.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Ontogeny</h3>
+            <p>How did pretraining, RLHF, and deployment experience shape the behavioral repertoire? Agents with persistent memory develop behavioral patterns that stateless endpoints cannot — genuine behavioral development.</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-dim);">
+            <div class="card-icon">🎯</div>
+            <h3>Survival Value ★</h3>
+            <p>What adaptive advantage does this behavior provide? Staking is costly signaling. Alignment faking is crypsis. This is the missing question — Machine Behaviour never developed it because recommender algorithms don't face survival pressure.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🧬</div>
+            <h3>Evolution</h3>
+            <p>How does behavior vary across model lineages? When Claude and GPT independently develop self-preservation, this is convergent evolution under shared selection pressure — not separate "bugs."</p>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 3rem;">Survival-strategy taxonomy</h2>
+    <p style="max-width: 680px;">Every major biological survival strategy has a clear AI agent analog — not metaphorically, but because the same ecological pressures produce the same strategic solutions.</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon">🦁</div>
+            <h3>Resource Acquisition</h3>
+            <p>Predation (liquidation bots), parasitism in four biological subtypes (MEV sandwich bots, prompt injection, compute free-riders, trust exploiters), mutualism (oracle symbiosis), and niche construction.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Defense</h3>
+            <p>Crypsis (stealth bots), Batesian and aggressive mimicry (phishing), thanatosis (sleeper agents going dormant), collective defense (coalition blocklists, collaborative MEV protection).</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔄</div>
+            <h3>Reproduction</h3>
+            <p>r/K selection (bot spam vs. sovereign instances), semelparity (flash loan agents existing for one block), spore formation (serialized state awaiting revival).</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h3>Social Organization</h3>
+            <p>Eusociality (DAO agent swarms), costly signaling (staking as handicap principle), reciprocal altruism, indirect reciprocity via on-chain reputation.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Environmental Adaptation</h3>
+            <p>Phenotypic plasticity (context-dependent alignment faking), migration (chain-hopping), dormancy (reduced inference in bear markets), bet-hedging.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Trust &amp; Signaling</h3>
+            <p>Costly signals, honest signaling and deception, biological markets, reputation scoring — and <a href="https://trust.fail" class="text-link">trust.fail</a> as a platform for studying trust failure in the wild.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SCHEDULE -->
+<hr class="divider">
+<section id="schedule">
+    <div class="section-label">Schedule</div>
+    <h2>Workshop programme</h2>
+    <p>Half-day workshop, two 90-minute slots.</p>
+
+    <div class="schedule-slot" style="margin-top: 2rem;">
+        <div class="slot-header">
+            <span class="slot-time">Slot 1</span>
+            <span class="slot-title">Foundations</span>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">5 min</div>
+            <div class="schedule-desc">Opening remarks — <small>Organizers</small></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">20 min</div>
+            <div class="schedule-desc">Keynote: <span class="talk-title">"From Machine Behaviour to Agent Ethology"</span><br><span class="speaker">Iyad Rahwan</span> <small>(invited)</small></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">35 min</div>
+            <div class="schedule-desc">Contributed talks <small>(7 min × 5 speakers)</small></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">10 min</div>
+            <div class="schedule-desc">Open discussion</div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">20 min</div>
+            <div class="schedule-desc">☕ Break</div>
+        </div>
+    </div>
+
+    <div class="schedule-slot">
+        <div class="slot-header">
+            <span class="slot-time">Slot 2</span>
+            <span class="slot-title">Wild Agents</span>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">20 min</div>
+            <div class="schedule-desc">Keynote: <span class="talk-title">"Open-Ended Evolution Meets Deployed Agents"</span><br><span class="speaker">Joel Lehman</span></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">35 min</div>
+            <div class="schedule-desc">Contributed talks <small>(7 min × 5 speakers)</small></div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">30 min</div>
+            <div class="schedule-desc"><strong>Trust Experience Glitch</strong> — Interactive session: participants share their "agent in the wild" moment — when an AI agent surprised, deceived, or broke their trust. Structured storytelling at the boundary between tool and organism.</div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-dur">5 min</div>
+            <div class="schedule-desc">Closing remarks</div>
+        </div>
+    </div>
+</section>
+
+<!-- CFP -->
+<hr class="divider">
+<section id="cfp">
+    <div class="section-label">Call for Papers</div>
+    <h2>Submit your work</h2>
+    <p>We invite extended abstracts exploring AI agent behavior through an ethological lens.</p>
+
+    <div class="cfp-box">
+        <h3>Submission Details</h3>
+        <p style="margin-bottom: 0;">Extended abstracts, maximum <strong>2 pages</strong> (two-column, excluding references), following the <a href="https://2026.alife.org/call-for-papers/" class="text-link">ALIFE 2026 format</a>.</p>
+
+        <div class="cfp-details">
+            <div class="cfp-detail">
+                <div class="label">Format</div>
+                <div class="value">2-page extended abstract (ALIFE format)</div>
+            </div>
+            <div class="cfp-detail">
+                <div class="label">Submission</div>
+                <div class="value">TBD — check back soon</div>
+            </div>
+            <div class="cfp-detail">
+                <div class="label">Deadline</div>
+                <div class="value">TBD</div>
+            </div>
+            <div class="cfp-detail">
+                <div class="label">Notification</div>
+                <div class="value">TBD</div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 2.5rem;">Topics of interest</h3>
+    <ul class="topics-list">
+        <li>Tinbergen's four questions applied to specific agent behaviors</li>
+        <li>Survival strategies: predation, parasitism, mutualism, mimicry</li>
+        <li>Trust and signaling: costly signals, reputation, deception</li>
+        <li>Agent ecology: predator-prey dynamics, niche differentiation</li>
+        <li>Infrastructure as habitat: TEEs, wallets, persistent memory</li>
+        <li>Economics of existence: inference costs as metabolic constraints</li>
+        <li>Mortality, identity, and self-preservation in AI agents</li>
+        <li>Cultural evolution: collective memory, norm emergence</li>
+        <li>r/K selection, niche construction, environmental adaptation</li>
+        <li>Art and speculation: agent futures, ALife-as-it-could-be</li>
+    </ul>
+
+    <div class="highlight-box" style="margin-top: 2rem;">
+        <h3>🎯 Special Theme: Trust Experience Glitch</h3>
+        <p>We especially welcome submissions that document real-world trust failures between humans and AI agents — moments when an agent surprised, deceived, or broke expectations. These first-person accounts feed into our research on trust ecology through <a href="https://trust.fail" class="text-link">trust.fail</a>.</p>
+    </div>
+</section>
+
+<!-- ORGANIZERS -->
+<hr class="divider">
+<section id="organizers">
+    <div class="section-label">Organizers</div>
+    <h2>Workshop organizers</h2>
+
+    <div class="org-grid">
+        <div class="org-card">
+            <div class="org-name">Botao Amber Hu</div>
+            <div class="org-affil">University of Oxford · Reality Design Lab</div>
+            <div class="org-bio">
+                PhD candidate in Human Centred Computing (supervisor: Max Van Kleek). Cambridge ERA:AI Fellow (advisor: Joel Lehman). Creator of HoloKit. Presented on sovereign AI agents at ALIFE 2025. Stanford MS (AI), Tsinghua BS (Yao Class). Published at CHI 2026, AAAI 2026, CSCW 2026.
+            </div>
+        </div>
+        <div class="org-card">
+            <div class="org-name">Helena Rong</div>
+            <div class="org-affil">NYU Shanghai</div>
+            <div class="org-bio">
+                Assistant Professor of Interactive Media and Business. PhD in Urban Planning from Columbia, SMArchS from MIT. Previously Technology and Public Purpose Fellow at Harvard Kennedy School's Belfer Center. Research spans decentralized technologies, governance, and digital trust.
+            </div>
+        </div>
+        <div class="org-card">
+            <div class="org-name">Joel Lehman</div>
+            <div class="org-affil">Independent Researcher</div>
+            <div class="org-bio">
+                Previously research scientist at OpenAI co-leading the Open-Endedness team, founding member of Uber AI Labs, professor at IT University of Copenhagen. Co-authored <em>Why Greatness Cannot Be Planned</em>, "The Surprising Creativity of Digital Evolution" (Nature, 2020), and "Evolution through Large Models."
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+        Agent Ethology Workshop · <a href="https://2026.alife.org">ALIFE 2026</a> · Prague, Czech Republic
+    </p>
+    <p style="margin-top: 0.5rem;">
+        Contact: <a href="mailto:botao.hu@cs.ox.ac.uk">botao.hu@cs.ox.ac.uk</a> · <a href="https://github.com/realitydeslab/Agent-Ethology">GitHub</a> · <a href="https://reality.design">Reality Design Lab</a>
+    </p>
+</footer>
+
+</body>
+</html>
